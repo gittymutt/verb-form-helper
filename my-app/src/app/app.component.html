@@ -1,0 +1,57 @@
+<input type="text" placeholder="put subject here" value="the dog" #subjectTxt>
+<input type="text" placeholder="put verb here" value="go" #verbTxt>
+<button (click)="change(subjectTxt.value, verbTxt)">Change</button>
+
+
+<div>
+    <input id="singular" type="radio" class=""  
+    name="number"  value="singular" (change)="radioChange($event)" checked/>
+    <label class="custom-control-label" for="singular">Singular</label>
+ </div>
+
+ <div>
+    <input id="plural" type="radio" class=""  
+    name="number" value="plural" formControlName="number" 
+    (change)="radioChange($event)" />
+    <label class="custom-control-label" for="plural">Plural</label>
+ </div>
+
+<h2>Simple Present</h2>
+{{ subject | capitalizeFirst }} 
+{{ (isSingular)?verb.thirdpers:verb.baseform}}
+<br>
+{{ subject | capitalizeFirst }} 
+{{ (isSingular)?"doesn't":"don't"}} 
+{{ verb.baseform }}
+<br>
+{{ (isSingular)?"Does":"Do"}} 
+{{ subject }} 
+{{ verb.baseform }} ?
+<br>
+
+<h2>Simple Past</h2>
+{{ subject | capitalizeFirst }} 
+{{ verb.simplepast }} 
+<br>
+{{ subject | capitalizeFirst }} 
+didn't {{ verb.baseform }}
+<br>
+Did {{ subject }} 
+{{ verb.baseform }} ?
+<br>
+
+<h2>Present Perfect</h2>
+{{ subject }} 
+{{ (isSingular)?"has":"have" }} 
+{{ verb.pastpart }}
+<br>
+{{ subject }} 
+{{ (isSingular)?"hasn't":"haven't" }} 
+{{ verb.pastpart }}
+<br>
+{{ (isSingular)?"has":"have" }} 
+{{ subject }} 
+{{ verb.pastpart }} ?
+
+
+
