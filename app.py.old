@@ -1,0 +1,33 @@
+from flask import Flask, request
+from flask_cors import CORS
+import mlconjug3
+
+app = Flask(__name__)
+cors = CORS(app)
+app.debug = True
+
+conj = mlconjug3.Conjugator(language='en')
+
+@app.route('/', methods = ['GET'])
+def hello_world():
+    subject = request.args.get('subject')
+    verb = request.args.get('verb')
+    forms = get_forms(verb)
+
+    return {
+        "subject": subject
+        ,"thirdpers": forms['thirdpers']
+        ,"simplepast": forms['simplepast']
+        ,"pastpart": forms['pastpart']
+        ,"ingform": forms['ingform']
+        ,"baseform":forms['baseform']
+    } 
+
+def get_forms(verb):
+    forms = conj.conjugate(verb)
+    baseform = forms.conjug_info['indicative']['indicative present']['1s']
+    thirdpers = forms.conjug_info['indicative']['indicative present']['3s']
+    simplepast = forms.conjug_info['indicative']['indicative past tense']['3s']
+    pastpart = forms.conjug_info['indicative']['indicative present perfect']['3s']
+    ingform = forms.conjug_info['indicative']['indicative present continuous']['3s']
+    return {'thirdpers': thirdpers, 'simplepast': simplepast, 'pastpart': pastpart, 'ingform': ingform, 'baseform': baseform}
