@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { fromEventPattern } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { Be } from './be-form'
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,11 @@ export class AppComponent  {
   url2:string = '&verb=';
   isSingular: Boolean = true;
   isChecked = new FormControl(true);
-
+  be = new Be();
   
   constructor (private http: HttpClient) {
+
+
     this.http.get(this.url1+'the%20dog'+this.url2+'go')
       .toPromise().then( data => {
         console.log("incoming datatype is: ", typeof(data));
