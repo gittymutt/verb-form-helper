@@ -1,0 +1,1817 @@
+06 01 2021 12:01:31.239:DEBUG [config]: Loading config /home/pedro/programming/flaskapp2/my-app/karma.conf.js
+06 01 2021 12:01:31.249:DEBUG [karma-server]: Final config Config {
+  LOG_DISABLE: 'OFF',
+  LOG_ERROR: 'ERROR',
+  LOG_WARN: 'WARN',
+  LOG_INFO: 'INFO',
+  LOG_DEBUG: 'DEBUG',
+  frameworks: [ 'jasmine', '@angular-devkit/build-angular' ],
+  protocol: 'http:',
+  port: 9876,
+  listenAddress: '0.0.0.0',
+  hostname: 'localhost',
+  httpsServerConfig: {},
+  basePath: '/home/pedro/programming/flaskapp2/my-app',
+  files: [],
+  browserConsoleLogOptions: { level: 'debug', format: '%b %T: %m', terminal: true },
+  customContextFile: null,
+  customDebugFile: null,
+  customClientContextFile: null,
+  exclude: [ '/home/pedro/programming/flaskapp2/my-app/karma.conf.js' ],
+  logLevel: 'DEBUG',
+  colors: true,
+  autoWatch: true,
+  autoWatchBatchDelay: 250,
+  restartOnFileChange: true,
+  usePolling: true,
+  reporters: [ 'progress', 'kjhtml' ],
+  singleRun: false,
+  browsers: [ 'Chrome' ],
+  captureTimeout: 60000,
+  pingTimeout: 5000,
+  proxies: {},
+  proxyValidateSSL: true,
+  preprocessors: [Object: null prototype] {},
+  preprocessor_priority: {},
+  urlRoot: '/',
+  upstreamProxy: undefined,
+  reportSlowerThan: 0,
+  loggers: [
+    {
+      type: 'console',
+      layout: { type: 'pattern', pattern: '%[%d{DATE}:%p [%c]: %]%m' }
+    }
+  ],
+  transports: [ 'polling', 'websocket' ],
+  forceJSONP: false,
+  plugins: [
+    {
+      'framework:jasmine': [
+        'factory',
+        [Function: initJasmine] { '$inject': [ 'config.files' ] }
+      ],
+      'reporter:karma-jasmine': [
+        'factory',
+        [Function: InjectKarmaJasmineReporter] {
+          '$inject': [ 'config.singleRun' ]
+        }
+      ]
+    },
+    {
+      'launcher:Chrome': [
+        'type',
+        [Function: ChromeBrowser] {
+          '$inject': [ 'baseBrowserDecorator', 'args' ]
+        }
+      ],
+      'launcher:ChromeHeadless': [
+        'type',
+        [Function: ChromeHeadlessBrowser] {
+          '$inject': [ 'baseBrowserDecorator', 'args' ]
+        }
+      ],
+      'launcher:ChromeCanary': [
+        'type',
+        [Function: ChromeCanaryBrowser] {
+          '$inject': [ 'baseBrowserDecorator', 'args' ]
+        }
+      ],
+      'launcher:ChromeCanaryHeadless': [
+        'type',
+        [Function: ChromeCanaryHeadlessBrowser] {
+          '$inject': [ 'baseBrowserDecorator', 'args' ]
+        }
+      ],
+      'launcher:Chromium': [
+        'type',
+        [Function: ChromiumBrowser] {
+          '$inject': [ 'baseBrowserDecorator', 'args' ]
+        }
+      ],
+      'launcher:ChromiumHeadless': [ 'type', [Function: ChromiumHeadlessBrowser] ],
+      'launcher:Dartium': [
+        'type',
+        [Function: DartiumBrowser] {
+          '$inject': [ 'baseBrowserDecorator', 'args' ]
+        }
+      ],
+      test: {
+        isJSFlags: [Function: isJSFlags],
+        sanitizeJSFlags: [Function: sanitizeJSFlags],
+        headlessGetOptions: [Function: headlessGetOptions],
+        canaryGetOptions: [Function: canaryGetOptions]
+      }
+    },
+    {
+      'reporter:kjhtml': [
+        'type',
+        [Function: initReporter] {
+          '$inject': [ 'config', 'baseReporterDecorator' ]
+        }
+      ]
+    },
+    {
+      'preprocessor:coverage': [
+        'factory',
+        [Function: createCoveragePreprocessor] {
+          '$inject': [
+            'logger',
+            'config.basePath',
+            'config.reporters',
+            'config.coverageReporter'
+          ]
+        }
+      ],
+      'reporter:coverage': [
+        'type',
+        [Function: CoverageReporter] {
+          '$inject': [ 'config', 'helper', 'logger', 'emitter' ]
+        }
+      ]
+    },
+    {
+      'framework:@angular-devkit/build-angular': [
+        'factory',
+        [Function: init] {
+          '$inject': [ 'config', 'emitter', 'customFileHandlers' ]
+        }
+      ],
+      'reporter:@angular-devkit/build-angular--sourcemap-reporter': [
+        'type',
+        [Function: sourceMapReporter] {
+          '$inject': [ 'baseReporterDecorator', 'config' ]
+        }
+      ],
+      'reporter:@angular-devkit/build-angular--event-reporter': [
+        'type',
+        [Function: eventReporter] {
+          '$inject': [ 'baseReporterDecorator', 'config' ]
+        }
+      ],
+      'middleware:@angular-devkit/build-angular--blocker': [ 'factory', [Function: requestBlocker] ],
+      'middleware:@angular-devkit/build-angular--fallback': [ 'factory', [Function: fallbackMiddleware] ]
+    }
+  ],
+  client: {
+    args: [],
+    useIframe: true,
+    runInParent: false,
+    captureConsole: true,
+    clearContext: false,
+    jasmine: {}
+  },
+  defaultClient: {
+    args: [],
+    useIframe: true,
+    runInParent: false,
+    captureConsole: true,
+    clearContext: false,
+    jasmine: {}
+  },
+  browserDisconnectTimeout: 2000,
+  browserDisconnectTolerance: 0,
+  browserNoActivityTimeout: 30000,
+  processKillTimeout: 2000,
+  concurrency: Infinity,
+  failOnEmptyTestSuite: true,
+  retryLimit: 2,
+  detached: false,
+  crossOriginAttribute: true,
+  browserSocketTimeout: 20000,
+  configFile: '/home/pedro/programming/flaskapp2/my-app/karma.conf.js',
+  buildWebpack: {
+    options: {
+      main: 'src/test.ts',
+      polyfills: 'src/polyfills.ts',
+      tsConfig: 'tsconfig.spec.json',
+      karmaConfig: 'karma.conf.js',
+      assets: [ 'src/favicon.ico', 'src/assets' ],
+      styles: [ 'src/styles.css' ],
+      scripts: [],
+      stylePreprocessorOptions: { includePaths: [] },
+      include: [],
+      sourceMap: true,
+      progress: true,
+      watch: undefined,
+      poll: undefined,
+      preserveSymlinks: undefined,
+      browsers: undefined,
+      codeCoverage: false,
+      codeCoverageExclude: [],
+      fileReplacements: [],
+      reporters: [],
+      webWorkerTsConfig: undefined
+    },
+    webpackConfig: {
+      mode: 'development',
+      devtool: false,
+      profile: false,
+      resolve: {
+        roots: [ '/home/pedro/programming/flaskapp2/my-app' ],
+        extensions: [ '.ts', '.tsx', '.mjs', '.js' ],
+        symlinks: true,
+        modules: [ '/home/pedro/programming/flaskapp2/my-app', 'node_modules' ],
+        plugins: [
+          {
+            apply: [Function: nothing],
+            makePlugin: [Function (anonymous)],
+            moduleLoader: [Function (anonymous)],
+            topLevelLoader: { apply: [Function: nothing] },
+            bind: [Function (anonymous)],
+            tsLoaderOptions: [Function (anonymous)],
+            forkTsCheckerOptions: [Function (anonymous)]
+          }
+        ],
+        mainFields: [ 'es2015', 'browser', 'module', 'main' ],
+        alias: { 'zone.js/dist/zone': 'zone.js/dist/zone-evergreen' }
+      },
+      resolveLoader: {
+        symlinks: true,
+        modules: [ 'node_modules' ],
+        plugins: [ { apply: [Function: nothing] } ]
+      },
+      context: '/home/pedro/programming/flaskapp2/my-app',
+      entry: {
+        main: '/home/pedro/programming/flaskapp2/my-app/src/test.ts',
+        polyfills: [
+          '/home/pedro/programming/flaskapp2/my-app/src/polyfills.ts',
+          '/home/pedro/programming/flaskapp2/my-app/node_modules/@angular-devkit/build-angular/src/webpack/jit-polyfills.js'
+        ],
+        styles: [ '/home/pedro/programming/flaskapp2/my-app/src/styles.css' ]
+      },
+      output: {
+        futureEmitAssets: true,
+        path: '/home/pedro/programming/flaskapp2/my-app',
+        publicPath: undefined,
+        filename: '[name].js'
+      },
+      watch: undefined,
+      watchOptions: { poll: undefined, ignored: undefined },
+      performance: { hints: false },
+      module: {
+        strictExportPresence: true,
+        rules: [
+          {
+            test: /\.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani|avif)$/,
+            loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/file-loader/dist/cjs.js',
+            options: { name: '[name].[ext]', emitFile: true }
+          },
+          {
+            test: /[\/\\]@angular[\/\\]core[\/\\].+\.js$/,
+            parser: { system: true }
+          },
+          {
+            test: /[\/\\]rxjs[\/\\]add[\/\\].+\.js$/,
+            sideEffects: true
+          },
+          {
+            test: /\.m?js$/,
+            exclude: [
+              /[\/\\](?:core-js|\@babel|tslib)[\/\\]/,
+              /(ngfactory|ngstyle)\.js$/
+            ],
+            use: []
+          },
+          {
+            exclude: [
+              '/home/pedro/programming/flaskapp2/my-app/src/styles.css'
+            ],
+            test: /\.css$/,
+            use: [
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/raw-loader/dist/cjs.js'
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/postcss-loader/dist/cjs.js',
+                options: { postcssOptions: [Function (anonymous)] }
+              }
+            ]
+          },
+          {
+            exclude: [
+              '/home/pedro/programming/flaskapp2/my-app/src/styles.css'
+            ],
+            test: /\.scss$|\.sass$/,
+            use: [
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/raw-loader/dist/cjs.js'
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/postcss-loader/dist/cjs.js',
+                options: { postcssOptions: [Function (anonymous)] }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/resolve-url-loader/index.js',
+                options: { sourceMap: true }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/sass-loader/dist/cjs.js',
+                options: {
+                  implementation: {
+                    render: <ref *1> [Function (anonymous)] {
+                      '___dart__$dart_dartClosure_ZxYxX_0_': StaticClosure {
+                        '$initialize': [Function: StaticClosure],
+                        constructor: [Function: static_tear_off],
+                        '$static_name': '_render',
+                        '$signature': [Function (anonymous)],
+                        'call$2': [Function: _render] {
+                          '$callName': 'call$2',
+                          '$requiredArgCount': 2,
+                          '$defaultValues': null,
+                          '$stubName': '_render',
+                          '$tearOff': [Function (anonymous)]
+                        },
+                        'call*': [Function: _render] {
+                          '$callName': 'call$2',
+                          '$requiredArgCount': 2,
+                          '$defaultValues': null,
+                          '$stubName': '_render',
+                          '$tearOff': [Function (anonymous)]
+                        },
+                        '$requiredArgCount': 2,
+                        '$defaultValues': null,
+                        '$dart_jsFunction': [Circular *1]
+                      }
+                    },
+                    renderSync: <ref *2> [Function (anonymous)] {
+                      '___dart__$dart_dartClosure_ZxYxX_0_': StaticClosure {
+                        '$initialize': [Function: StaticClosure],
+                        constructor: [Function: static_tear_off],
+                        '$static_name': '_renderSync',
+                        '$signature': [Function (anonymous)],
+                        'call$1': [Function: _renderSync] {
+                          '$callName': 'call$1',
+                          '$requiredArgCount': 1,
+                          '$defaultValues': null,
+                          '$stubName': '_renderSync',
+                          '$tearOff': [Function (anonymous)]
+                        },
+                        'call*': [Function: _renderSync] {
+                          '$callName': 'call$1',
+                          '$requiredArgCount': 1,
+                          '$defaultValues': null,
+                          '$stubName': '_renderSync',
+                          '$tearOff': [Function (anonymous)]
+                        },
+                        '$requiredArgCount': 1,
+                        '$defaultValues': null,
+                        '$dart_jsFunction': [Circular *2]
+                      }
+                    },
+                    info: 'dart-sass\t1.27.0\t(Sass Compiler)\t[Dart]\n' +
+                      'dart2js\t2.10.1\t(Dart Compiler)\t[Dart]',
+                    types: {
+                      Boolean: <ref *3> [Function (anonymous)] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': _closure40 {
+                          '$dart_jsFunction': [Circular *3]
+                        },
+                        TRUE: SassBoolean { value: true },
+                        FALSE: SassBoolean { value: false }
+                      },
+                      Color: <ref *4> [Function: SassColor] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure245 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *4]
+                        }
+                      },
+                      List: <ref *5> [Function: SassList] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure238 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *5]
+                        }
+                      },
+                      Map: <ref *6> [Function: SassMap] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure231 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *6]
+                        }
+                      },
+                      Null: <ref *7> [Function (anonymous)] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': _closure35 {
+                          '$dart_jsFunction': [Circular *7]
+                        },
+                        NULL: SassNull {
+                          toString: <ref *8> [Function (anonymous)] {
+                            '___dart__$dart_dartClosure_ZxYxX_0_': _closure36 {
+                              '$dart_jsFunction': [Circular *8]
+                            }
+                          }
+                        }
+                      },
+                      Number: <ref *9> [Function: SassNumber] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure224 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *9]
+                        }
+                      },
+                      String: <ref *10> [Function: SassString] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure220 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *10]
+                        }
+                      },
+                      Error: [Function: Error] {
+                        stackTraceLimit: 16,
+                        prepareStackTrace: [Function: prepareStackTrace]
+                      }
+                    },
+                    NULL: SassNull {
+                      toString: <ref *8> [Function (anonymous)] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': _closure36 {
+                          '$dart_jsFunction': [Circular *8]
+                        }
+                      }
+                    },
+                    TRUE: SassBoolean { value: true },
+                    FALSE: SassBoolean { value: false },
+                    cli_pkg_main_0_: <ref *11> [Function (anonymous)] {
+                      '___dart__$dart_dartClosure_ZxYxX_0_': _wrapMain_closure0 {
+                        main: StaticClosure {
+                          '$initialize': [Function: StaticClosure],
+                          constructor: [Function: static_tear_off],
+                          '$static_name': 'main',
+                          '$signature': [Function (anonymous)],
+                          'call$1': [Function: main] {
+                            '$callName': 'call$1',
+                            '$requiredArgCount': 1,
+                            '$defaultValues': null,
+                            '$stubName': 'main',
+                            '$tearOff': [Function (anonymous)]
+                          },
+                          'call*': [Function: main] {
+                            '$callName': 'call$1',
+                            '$requiredArgCount': 1,
+                            '$defaultValues': null,
+                            '$stubName': 'main',
+                            '$tearOff': [Function (anonymous)]
+                          },
+                          '$requiredArgCount': 1,
+                          '$defaultValues': null
+                        },
+                        '$dart_jsFunction': [Circular *11]
+                      }
+                    }
+                  },
+                  sourceMap: true,
+                  sassOptions: {
+                    precision: 8,
+                    includePaths: [],
+                    outputStyle: 'expanded'
+                  }
+                }
+              }
+            ]
+          },
+          {
+            exclude: [
+              '/home/pedro/programming/flaskapp2/my-app/src/styles.css'
+            ],
+            test: /\.less$/,
+            use: [
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/raw-loader/dist/cjs.js'
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/postcss-loader/dist/cjs.js',
+                options: { postcssOptions: [Function (anonymous)] }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/less-loader/dist/cjs.js',
+                options: {
+                  sourceMap: true,
+                  lessOptions: { javascriptEnabled: true, paths: [] }
+                }
+              }
+            ]
+          },
+          {
+            exclude: [
+              '/home/pedro/programming/flaskapp2/my-app/src/styles.css'
+            ],
+            test: /\.styl$/,
+            use: [
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/raw-loader/dist/cjs.js'
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/postcss-loader/dist/cjs.js',
+                options: { postcssOptions: [Function (anonymous)] }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/stylus-loader/dist/cjs.js',
+                options: {
+                  sourceMap: true,
+                  stylusOptions: {
+                    compress: false,
+                    sourceMap: { comment: false },
+                    paths: []
+                  }
+                }
+              }
+            ]
+          },
+          {
+            include: [
+              '/home/pedro/programming/flaskapp2/my-app/src/styles.css'
+            ],
+            test: /\.css$/,
+            use: [
+              '/home/pedro/programming/flaskapp2/my-app/node_modules/style-loader/dist/cjs.js',
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/css-loader/dist/cjs.js',
+                options: { url: false, sourceMap: true }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/postcss-loader/dist/cjs.js',
+                options: { postcssOptions: [Function (anonymous)] }
+              }
+            ]
+          },
+          {
+            include: [
+              '/home/pedro/programming/flaskapp2/my-app/src/styles.css'
+            ],
+            test: /\.scss$|\.sass$/,
+            use: [
+              '/home/pedro/programming/flaskapp2/my-app/node_modules/style-loader/dist/cjs.js',
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/css-loader/dist/cjs.js',
+                options: { url: false, sourceMap: true }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/postcss-loader/dist/cjs.js',
+                options: { postcssOptions: [Function (anonymous)] }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/resolve-url-loader/index.js',
+                options: { sourceMap: true }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/sass-loader/dist/cjs.js',
+                options: {
+                  implementation: {
+                    render: <ref *1> [Function (anonymous)] {
+                      '___dart__$dart_dartClosure_ZxYxX_0_': StaticClosure {
+                        '$initialize': [Function: StaticClosure],
+                        constructor: [Function: static_tear_off],
+                        '$static_name': '_render',
+                        '$signature': [Function (anonymous)],
+                        'call$2': [Function: _render] {
+                          '$callName': 'call$2',
+                          '$requiredArgCount': 2,
+                          '$defaultValues': null,
+                          '$stubName': '_render',
+                          '$tearOff': [Function (anonymous)]
+                        },
+                        'call*': [Function: _render] {
+                          '$callName': 'call$2',
+                          '$requiredArgCount': 2,
+                          '$defaultValues': null,
+                          '$stubName': '_render',
+                          '$tearOff': [Function (anonymous)]
+                        },
+                        '$requiredArgCount': 2,
+                        '$defaultValues': null,
+                        '$dart_jsFunction': [Circular *1]
+                      }
+                    },
+                    renderSync: <ref *2> [Function (anonymous)] {
+                      '___dart__$dart_dartClosure_ZxYxX_0_': StaticClosure {
+                        '$initialize': [Function: StaticClosure],
+                        constructor: [Function: static_tear_off],
+                        '$static_name': '_renderSync',
+                        '$signature': [Function (anonymous)],
+                        'call$1': [Function: _renderSync] {
+                          '$callName': 'call$1',
+                          '$requiredArgCount': 1,
+                          '$defaultValues': null,
+                          '$stubName': '_renderSync',
+                          '$tearOff': [Function (anonymous)]
+                        },
+                        'call*': [Function: _renderSync] {
+                          '$callName': 'call$1',
+                          '$requiredArgCount': 1,
+                          '$defaultValues': null,
+                          '$stubName': '_renderSync',
+                          '$tearOff': [Function (anonymous)]
+                        },
+                        '$requiredArgCount': 1,
+                        '$defaultValues': null,
+                        '$dart_jsFunction': [Circular *2]
+                      }
+                    },
+                    info: 'dart-sass\t1.27.0\t(Sass Compiler)\t[Dart]\n' +
+                      'dart2js\t2.10.1\t(Dart Compiler)\t[Dart]',
+                    types: {
+                      Boolean: <ref *3> [Function (anonymous)] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': _closure40 {
+                          '$dart_jsFunction': [Circular *3]
+                        },
+                        TRUE: SassBoolean { value: true },
+                        FALSE: SassBoolean { value: false }
+                      },
+                      Color: <ref *4> [Function: SassColor] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure245 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *4]
+                        }
+                      },
+                      List: <ref *5> [Function: SassList] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure238 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *5]
+                        }
+                      },
+                      Map: <ref *6> [Function: SassMap] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure231 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *6]
+                        }
+                      },
+                      Null: <ref *7> [Function (anonymous)] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': _closure35 {
+                          '$dart_jsFunction': [Circular *7]
+                        },
+                        NULL: SassNull {
+                          toString: <ref *8> [Function (anonymous)] {
+                            '___dart__$dart_dartClosure_ZxYxX_0_': _closure36 {
+                              '$dart_jsFunction': [Circular *8]
+                            }
+                          }
+                        }
+                      },
+                      Number: <ref *9> [Function: SassNumber] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure224 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *9]
+                        }
+                      },
+                      String: <ref *10> [Function: SassString] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': closure220 {
+                          '_$dart_jsFunctionCaptureThis': [Circular *10]
+                        }
+                      },
+                      Error: [Function: Error] {
+                        stackTraceLimit: 16,
+                        prepareStackTrace: [Function: prepareStackTrace]
+                      }
+                    },
+                    NULL: SassNull {
+                      toString: <ref *8> [Function (anonymous)] {
+                        '___dart__$dart_dartClosure_ZxYxX_0_': _closure36 {
+                          '$dart_jsFunction': [Circular *8]
+                        }
+                      }
+                    },
+                    TRUE: SassBoolean { value: true },
+                    FALSE: SassBoolean { value: false },
+                    cli_pkg_main_0_: <ref *11> [Function (anonymous)] {
+                      '___dart__$dart_dartClosure_ZxYxX_0_': _wrapMain_closure0 {
+                        main: StaticClosure {
+                          '$initialize': [Function: StaticClosure],
+                          constructor: [Function: static_tear_off],
+                          '$static_name': 'main',
+                          '$signature': [Function (anonymous)],
+                          'call$1': [Function: main] {
+                            '$callName': 'call$1',
+                            '$requiredArgCount': 1,
+                            '$defaultValues': null,
+                            '$stubName': 'main',
+                            '$tearOff': [Function (anonymous)]
+                          },
+                          'call*': [Function: main] {
+                            '$callName': 'call$1',
+                            '$requiredArgCount': 1,
+                            '$defaultValues': null,
+                            '$stubName': 'main',
+                            '$tearOff': [Function (anonymous)]
+                          },
+                          '$requiredArgCount': 1,
+                          '$defaultValues': null
+                        },
+                        '$dart_jsFunction': [Circular *11]
+                      }
+                    }
+                  },
+                  sourceMap: true,
+                  sassOptions: {
+                    precision: 8,
+                    includePaths: [],
+                    outputStyle: 'expanded'
+                  }
+                }
+              }
+            ]
+          },
+          {
+            include: [
+              '/home/pedro/programming/flaskapp2/my-app/src/styles.css'
+            ],
+            test: /\.less$/,
+            use: [
+              '/home/pedro/programming/flaskapp2/my-app/node_modules/style-loader/dist/cjs.js',
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/css-loader/dist/cjs.js',
+                options: { url: false, sourceMap: true }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/postcss-loader/dist/cjs.js',
+                options: { postcssOptions: [Function (anonymous)] }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/less-loader/dist/cjs.js',
+                options: {
+                  sourceMap: true,
+                  lessOptions: { javascriptEnabled: true, paths: [] }
+                }
+              }
+            ]
+          },
+          {
+            include: [
+              '/home/pedro/programming/flaskapp2/my-app/src/styles.css'
+            ],
+            test: /\.styl$/,
+            use: [
+              '/home/pedro/programming/flaskapp2/my-app/node_modules/style-loader/dist/cjs.js',
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/css-loader/dist/cjs.js',
+                options: { url: false, sourceMap: true }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/postcss-loader/dist/cjs.js',
+                options: { postcssOptions: [Function (anonymous)] }
+              },
+              {
+                loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/stylus-loader/dist/cjs.js',
+                options: {
+                  sourceMap: true,
+                  stylusOptions: {
+                    compress: false,
+                    sourceMap: { comment: false },
+                    paths: []
+                  }
+                }
+              }
+            ]
+          },
+          {
+            test: /\.tsx?$/,
+            loader: '/home/pedro/programming/flaskapp2/my-app/node_modules/@ngtools/webpack/src/index.js'
+          }
+        ]
+      },
+      optimization: {
+        minimizer: [],
+        moduleIds: 'hashed',
+        noEmitOnErrors: true,
+        splitChunks: {
+          chunks: [Function: chunks],
+          cacheGroups: {
+            vendors: false,
+            defaultVendors: {
+              name: 'vendor',
+              chunks: [Function: chunks],
+              enforce: true,
+              test: /[\\/]node_modules[\\/]/
+            }
+          }
+        }
+      },
+      plugins: [
+        ContextReplacementPlugin {
+          resourceRegExp: /\@angular(\\|\/)core(\\|\/)/,
+          newContentResource: undefined,
+          newContentRecursive: undefined,
+          newContentRegExp: undefined
+        },
+        DedupeModuleResolvePlugin {
+          options: { verbose: undefined },
+          modules: Map(0) {}
+        },
+        CopyPlugin {
+          patterns: [
+            {
+              context: '/home/pedro/programming/flaskapp2/my-app/src/',
+              to: '',
+              from: 'favicon.ico',
+              noErrorOnMissing: true,
+              force: true,
+              globOptions: {
+                dot: true,
+                ignore: [
+                  '/home/pedro/programming/flaskapp2/my-app/src/.gitkeep',
+                  '/home/pedro/programming/flaskapp2/my-app/src/**/.DS_Store',
+                  '/home/pedro/programming/flaskapp2/my-app/src/**/Thumbs.db'
+                ]
+              }
+            },
+            {
+              context: '/home/pedro/programming/flaskapp2/my-app/src/assets/',
+              to: 'assets/',
+              from: '**/*',
+              noErrorOnMissing: true,
+              force: true,
+              globOptions: {
+                dot: true,
+                ignore: [
+                  '/home/pedro/programming/flaskapp2/my-app/src/assets/.gitkeep',
+                  '/home/pedro/programming/flaskapp2/my-app/src/assets/**/.DS_Store',
+                  '/home/pedro/programming/flaskapp2/my-app/src/assets/**/Thumbs.db'
+                ]
+              }
+            }
+          ],
+          options: {}
+        },
+        ProgressPlugin {
+          profile: false,
+          handler: [Function: handler],
+          modulesCount: 500,
+          showEntries: false,
+          showModules: true,
+          showActiveModules: true
+        },
+        BundleBudgetPlugin { options: { budgets: [] } },
+        AnyComponentStyleBudgetChecker { budgets: [] },
+        AngularCompilerPlugin {
+          _discoverLazyRoutes: true,
+          _useFactories: false,
+          _lazyRoutes: {},
+          _entryModule: null,
+          _transformers: [ [Function (anonymous)], [Function: downlevelFactory] ],
+          _platformTransformers: null,
+          _JitMode: true,
+          _emitSkipped: true,
+          _unusedFiles: Set(0) {},
+          _typeDeps: Set(0) {},
+          _changedFileExtensions: Set(6) { 'ts', 'tsx', 'html', 'css', 'js', 'json' },
+          _nodeModulesRegExp: /[\\\/]node_modules[\\\/]/,
+          _firstRun: true,
+          _donePromise: null,
+          _normalizedLocale: null,
+          _warnings: [],
+          _errors: [],
+          _forkTypeChecker: false,
+          _typeCheckerProcess: null,
+          _forkedTypeCheckerInitialized: false,
+          _mainFields: [],
+          _options: {
+            mainPath: '/home/pedro/programming/flaskapp2/my-app/src/test.ts',
+            i18nInFile: undefined,
+            i18nInFormat: undefined,
+            locale: undefined,
+            platform: 0,
+            missingTranslation: undefined,
+            sourceMap: true,
+            additionalLazyModules: {},
+            nameLazyFiles: undefined,
+            forkTypeChecker: false,
+            contextElementDependencyConstructor: [class ContextElementDependency extends ModuleDependency],
+            logger: Logger {
+              _isScalar: false,
+              name: 'webpackConfigOptions',
+              parent: Logger {
+                _isScalar: false,
+                name: 'my-app:test:',
+                parent: null,
+                _subject: <ref *13> Subject {
+                  _isScalar: false,
+                  observers: [
+                    <ref *12> Subscriber {
+                      closed: false,
+                      _parentOrParents: null,
+                      _subscriptions: [
+                        SubjectSubscription {
+                          closed: false,
+                          _parentOrParents: [Circular *12],
+                          _subscriptions: null,
+                          subject: [Circular *13],
+                          subscriber: [Circular *12]
+                        }
+                      ],
+                      syncErrorValue: null,
+                      syncErrorThrown: false,
+                      syncErrorThrowable: true,
+                      isStopped: false,
+                      destination: <ref *14> SafeSubscriber {
+                        closed: false,
+                        _parentOrParents: null,
+                        _subscriptions: null,
+                        syncErrorValue: null,
+                        syncErrorThrown: false,
+                        syncErrorThrowable: false,
+                        isStopped: false,
+                        destination: {
+                          closed: true,
+                          next: [Function: next],
+                          error: [Function: error],
+                          complete: [Function: complete]
+                        },
+                        _parentSubscriber: [Circular *12],
+                        _context: [Circular *14],
+                        _next: [Function (anonymous)],
+                        _error: undefined,
+                        _complete: undefined
+                      }
+                    },
+                    <ref *15> Subscriber {
+                      closed: false,
+                      _parentOrParents: null,
+                      _subscriptions: [
+                        SubjectSubscription {
+                          closed: false,
+                          _parentOrParents: [Circular *15],
+                          _subscriptions: null,
+                          subject: [Circular *13],
+                          subscriber: [Circular *15]
+                        }
+                      ],
+                      syncErrorValue: null,
+                      syncErrorThrown: false,
+                      syncErrorThrowable: true,
+                      isStopped: false,
+                      destination: <ref *16> SafeSubscriber {
+                        closed: false,
+                        _parentOrParents: null,
+                        _subscriptions: null,
+                        syncErrorValue: null,
+                        syncErrorThrown: false,
+                        syncErrorThrowable: false,
+                        isStopped: false,
+                        destination: {
+                          closed: true,
+                          next: [Function: next],
+                          error: [Function: error],
+                          complete: [Function: complete]
+                        },
+                        _parentSubscriber: [Circular *15],
+                        _context: [Circular *16],
+                        _next: undefined,
+                        _error: undefined,
+                        _complete: [Function (anonymous)]
+                      }
+                    }
+                  ],
+                  closed: false,
+                  isStopped: false,
+                  hasError: false,
+                  thrownError: null
+                },
+                _obs: Observable {
+                  _isScalar: false,
+                  source: <ref *13> Subject {
+                    _isScalar: false,
+                    observers: [
+                      <ref *12> Subscriber {
+                        closed: false,
+                        _parentOrParents: null,
+                        _subscriptions: [
+                          SubjectSubscription {
+                            closed: false,
+                            _parentOrParents: [Circular *12],
+                            _subscriptions: null,
+                            subject: [Circular *13],
+                            subscriber: [Circular *12]
+                          }
+                        ],
+                        syncErrorValue: null,
+                        syncErrorThrown: false,
+                        syncErrorThrowable: true,
+                        isStopped: false,
+                        destination: <ref *14> SafeSubscriber {
+                          closed: false,
+                          _parentOrParents: null,
+                          _subscriptions: null,
+                          syncErrorValue: null,
+                          syncErrorThrown: false,
+                          syncErrorThrowable: false,
+                          isStopped: false,
+                          destination: {
+                            closed: true,
+                            next: [Function: next],
+                            error: [Function: error],
+                            complete: [Function: complete]
+                          },
+                          _parentSubscriber: [Circular *12],
+                          _context: [Circular *14],
+                          _next: [Function (anonymous)],
+                          _error: undefined,
+                          _complete: undefined
+                        }
+                      },
+                      <ref *15> Subscriber {
+                        closed: false,
+                        _parentOrParents: null,
+                        _subscriptions: [
+                          SubjectSubscription {
+                            closed: false,
+                            _parentOrParents: [Circular *15],
+                            _subscriptions: null,
+                            subject: [Circular *13],
+                            subscriber: [Circular *15]
+                          }
+                        ],
+                        syncErrorValue: null,
+                        syncErrorThrown: false,
+                        syncErrorThrowable: true,
+                        isStopped: false,
+                        destination: <ref *16> SafeSubscriber {
+                          closed: false,
+                          _parentOrParents: null,
+                          _subscriptions: null,
+                          syncErrorValue: null,
+                          syncErrorThrown: false,
+                          syncErrorThrowable: false,
+                          isStopped: false,
+                          destination: {
+                            closed: true,
+                            next: [Function: next],
+                            error: [Function: error],
+                            complete: [Function: complete]
+                          },
+                          _parentSubscriber: [Circular *15],
+                          _context: [Circular *16],
+                          _next: undefined,
+                          _error: undefined,
+                          _complete: [Function (anonymous)]
+                        }
+                      }
+                    ],
+                    closed: false,
+                    isStopped: false,
+                    hasError: false,
+                    thrownError: null
+                  }
+                },
+                _subscription: null,
+                _metadata: { name: 'my-app:test:', path: [] }
+              },
+              _subject: <ref *18> Subject {
+                _isScalar: false,
+                observers: [
+                  <ref *17> Subscriber {
+                    closed: false,
+                    _parentOrParents: null,
+                    _subscriptions: [
+                      SubjectSubscription {
+                        closed: false,
+                        _parentOrParents: [Circular *17],
+                        _subscriptions: null,
+                        subject: [Circular *18],
+                        subscriber: [Circular *17]
+                      }
+                    ],
+                    syncErrorValue: null,
+                    syncErrorThrown: false,
+                    syncErrorThrowable: true,
+                    isStopped: false,
+                    destination: <ref *19> SafeSubscriber {
+                      closed: false,
+                      _parentOrParents: null,
+                      _subscriptions: null,
+                      syncErrorValue: null,
+                      syncErrorThrown: false,
+                      syncErrorThrowable: false,
+                      isStopped: false,
+                      destination: {
+                        closed: true,
+                        next: [Function: next],
+                        error: [Function: error],
+                        complete: [Function: complete]
+                      },
+                      _parentSubscriber: [Circular *17],
+                      _context: [Circular *19],
+                      _next: [Function (anonymous)],
+                      _error: [Function (anonymous)],
+                      _complete: [Function (anonymous)]
+                    }
+                  }
+                ],
+                closed: false,
+                isStopped: false,
+                hasError: false,
+                thrownError: null
+              },
+              _obs: Observable {
+                _isScalar: false,
+                source: <ref *18> Subject {
+                  _isScalar: false,
+                  observers: [
+                    <ref *17> Subscriber {
+                      closed: false,
+                      _parentOrParents: null,
+                      _subscriptions: [
+                        SubjectSubscription {
+                          closed: false,
+                          _parentOrParents: [Circular *17],
+                          _subscriptions: null,
+                          subject: [Circular *18],
+                          subscriber: [Circular *17]
+                        }
+                      ],
+                      syncErrorValue: null,
+                      syncErrorThrown: false,
+                      syncErrorThrowable: true,
+                      isStopped: false,
+                      destination: <ref *19> SafeSubscriber {
+                        closed: false,
+                        _parentOrParents: null,
+                        _subscriptions: null,
+                        syncErrorValue: null,
+                        syncErrorThrown: false,
+                        syncErrorThrowable: false,
+                        isStopped: false,
+                        destination: {
+                          closed: true,
+                          next: [Function: next],
+                          error: [Function: error],
+                          complete: [Function: complete]
+                        },
+                        _parentSubscriber: [Circular *17],
+                        _context: [Circular *19],
+                        _next: [Function (anonymous)],
+                        _error: [Function (anonymous)],
+                        _complete: [Function (anonymous)]
+                      }
+                    }
+                  ],
+                  closed: false,
+                  isStopped: false,
+                  hasError: false,
+                  thrownError: null
+                }
+              },
+              _subscription: <ref *17> Subscriber {
+                closed: false,
+                _parentOrParents: null,
+                _subscriptions: [
+                  SubjectSubscription {
+                    closed: false,
+                    _parentOrParents: [Circular *17],
+                    _subscriptions: null,
+                    subject: <ref *18> Subject {
+                      _isScalar: false,
+                      observers: [ [Circular *17] ],
+                      closed: false,
+                      isStopped: false,
+                      hasError: false,
+                      thrownError: null
+                    },
+                    subscriber: [Circular *17]
+                  }
+                ],
+                syncErrorValue: null,
+                syncErrorThrown: false,
+                syncErrorThrowable: true,
+                isStopped: false,
+                destination: <ref *19> SafeSubscriber {
+                  closed: false,
+                  _parentOrParents: null,
+                  _subscriptions: null,
+                  syncErrorValue: null,
+                  syncErrorThrown: false,
+                  syncErrorThrowable: false,
+                  isStopped: false,
+                  destination: {
+                    closed: true,
+                    next: [Function: next],
+                    error: [Function: error],
+                    complete: [Function: complete]
+                  },
+                  _parentSubscriber: [Circular *17],
+                  _context: [Circular *19],
+                  _next: [Function (anonymous)],
+                  _error: [Function (anonymous)],
+                  _complete: [Function (anonymous)]
+                }
+              },
+              _metadata: {
+                name: 'webpackConfigOptions',
+                path: [ 'my-app:test:' ]
+              }
+            },
+            directTemplateLoading: true,
+            tsConfigPath: '/home/pedro/programming/flaskapp2/my-app/tsconfig.spec.json',
+            skipCodeGeneration: true,
+            compilerOptions: {},
+            hostReplacementPaths: {}
+          },
+          _logger: Logger {
+            _isScalar: false,
+            name: 'webpackConfigOptions',
+            parent: Logger {
+              _isScalar: false,
+              name: 'my-app:test:',
+              parent: null,
+              _subject: <ref *13> Subject {
+                _isScalar: false,
+                observers: [
+                  <ref *12> Subscriber {
+                    closed: false,
+                    _parentOrParents: null,
+                    _subscriptions: [
+                      SubjectSubscription {
+                        closed: false,
+                        _parentOrParents: [Circular *12],
+                        _subscriptions: null,
+                        subject: [Circular *13],
+                        subscriber: [Circular *12]
+                      }
+                    ],
+                    syncErrorValue: null,
+                    syncErrorThrown: false,
+                    syncErrorThrowable: true,
+                    isStopped: false,
+                    destination: <ref *14> SafeSubscriber {
+                      closed: false,
+                      _parentOrParents: null,
+                      _subscriptions: null,
+                      syncErrorValue: null,
+                      syncErrorThrown: false,
+                      syncErrorThrowable: false,
+                      isStopped: false,
+                      destination: {
+                        closed: true,
+                        next: [Function: next],
+                        error: [Function: error],
+                        complete: [Function: complete]
+                      },
+                      _parentSubscriber: [Circular *12],
+                      _context: [Circular *14],
+                      _next: [Function (anonymous)],
+                      _error: undefined,
+                      _complete: undefined
+                    }
+                  },
+                  <ref *15> Subscriber {
+                    closed: false,
+                    _parentOrParents: null,
+                    _subscriptions: [
+                      SubjectSubscription {
+                        closed: false,
+                        _parentOrParents: [Circular *15],
+                        _subscriptions: null,
+                        subject: [Circular *13],
+                        subscriber: [Circular *15]
+                      }
+                    ],
+                    syncErrorValue: null,
+                    syncErrorThrown: false,
+                    syncErrorThrowable: true,
+                    isStopped: false,
+                    destination: <ref *16> SafeSubscriber {
+                      closed: false,
+                      _parentOrParents: null,
+                      _subscriptions: null,
+                      syncErrorValue: null,
+                      syncErrorThrown: false,
+                      syncErrorThrowable: false,
+                      isStopped: false,
+                      destination: {
+                        closed: true,
+                        next: [Function: next],
+                        error: [Function: error],
+                        complete: [Function: complete]
+                      },
+                      _parentSubscriber: [Circular *15],
+                      _context: [Circular *16],
+                      _next: undefined,
+                      _error: undefined,
+                      _complete: [Function (anonymous)]
+                    }
+                  }
+                ],
+                closed: false,
+                isStopped: false,
+                hasError: false,
+                thrownError: null
+              },
+              _obs: Observable {
+                _isScalar: false,
+                source: <ref *13> Subject {
+                  _isScalar: false,
+                  observers: [
+                    <ref *12> Subscriber {
+                      closed: false,
+                      _parentOrParents: null,
+                      _subscriptions: [
+                        SubjectSubscription {
+                          closed: false,
+                          _parentOrParents: [Circular *12],
+                          _subscriptions: null,
+                          subject: [Circular *13],
+                          subscriber: [Circular *12]
+                        }
+                      ],
+                      syncErrorValue: null,
+                      syncErrorThrown: false,
+                      syncErrorThrowable: true,
+                      isStopped: false,
+                      destination: <ref *14> SafeSubscriber {
+                        closed: false,
+                        _parentOrParents: null,
+                        _subscriptions: null,
+                        syncErrorValue: null,
+                        syncErrorThrown: false,
+                        syncErrorThrowable: false,
+                        isStopped: false,
+                        destination: {
+                          closed: true,
+                          next: [Function: next],
+                          error: [Function: error],
+                          complete: [Function: complete]
+                        },
+                        _parentSubscriber: [Circular *12],
+                        _context: [Circular *14],
+                        _next: [Function (anonymous)],
+                        _error: undefined,
+                        _complete: undefined
+                      }
+                    },
+                    <ref *15> Subscriber {
+                      closed: false,
+                      _parentOrParents: null,
+                      _subscriptions: [
+                        SubjectSubscription {
+                          closed: false,
+                          _parentOrParents: [Circular *15],
+                          _subscriptions: null,
+                          subject: [Circular *13],
+                          subscriber: [Circular *15]
+                        }
+                      ],
+                      syncErrorValue: null,
+                      syncErrorThrown: false,
+                      syncErrorThrowable: true,
+                      isStopped: false,
+                      destination: <ref *16> SafeSubscriber {
+                        closed: false,
+                        _parentOrParents: null,
+                        _subscriptions: null,
+                        syncErrorValue: null,
+                        syncErrorThrown: false,
+                        syncErrorThrowable: false,
+                        isStopped: false,
+                        destination: {
+                          closed: true,
+                          next: [Function: next],
+                          error: [Function: error],
+                          complete: [Function: complete]
+                        },
+                        _parentSubscriber: [Circular *15],
+                        _context: [Circular *16],
+                        _next: undefined,
+                        _error: undefined,
+                        _complete: [Function (anonymous)]
+                      }
+                    }
+                  ],
+                  closed: false,
+                  isStopped: false,
+                  hasError: false,
+                  thrownError: null
+                }
+              },
+              _subscription: null,
+              _metadata: { name: 'my-app:test:', path: [] }
+            },
+            _subject: <ref *18> Subject {
+              _isScalar: false,
+              observers: [
+                <ref *17> Subscriber {
+                  closed: false,
+                  _parentOrParents: null,
+                  _subscriptions: [
+                    SubjectSubscription {
+                      closed: false,
+                      _parentOrParents: [Circular *17],
+                      _subscriptions: null,
+                      subject: [Circular *18],
+                      subscriber: [Circular *17]
+                    }
+                  ],
+                  syncErrorValue: null,
+                  syncErrorThrown: false,
+                  syncErrorThrowable: true,
+                  isStopped: false,
+                  destination: <ref *19> SafeSubscriber {
+                    closed: false,
+                    _parentOrParents: null,
+                    _subscriptions: null,
+                    syncErrorValue: null,
+                    syncErrorThrown: false,
+                    syncErrorThrowable: false,
+                    isStopped: false,
+                    destination: {
+                      closed: true,
+                      next: [Function: next],
+                      error: [Function: error],
+                      complete: [Function: complete]
+                    },
+                    _parentSubscriber: [Circular *17],
+                    _context: [Circular *19],
+                    _next: [Function (anonymous)],
+                    _error: [Function (anonymous)],
+                    _complete: [Function (anonymous)]
+                  }
+                }
+              ],
+              closed: false,
+              isStopped: false,
+              hasError: false,
+              thrownError: null
+            },
+            _obs: Observable {
+              _isScalar: false,
+              source: <ref *18> Subject {
+                _isScalar: false,
+                observers: [
+                  <ref *17> Subscriber {
+                    closed: false,
+                    _parentOrParents: null,
+                    _subscriptions: [
+                      SubjectSubscription {
+                        closed: false,
+                        _parentOrParents: [Circular *17],
+                        _subscriptions: null,
+                        subject: [Circular *18],
+                        subscriber: [Circular *17]
+                      }
+                    ],
+                    syncErrorValue: null,
+                    syncErrorThrown: false,
+                    syncErrorThrowable: true,
+                    isStopped: false,
+                    destination: <ref *19> SafeSubscriber {
+                      closed: false,
+                      _parentOrParents: null,
+                      _subscriptions: null,
+                      syncErrorValue: null,
+                      syncErrorThrown: false,
+                      syncErrorThrowable: false,
+                      isStopped: false,
+                      destination: {
+                        closed: true,
+                        next: [Function: next],
+                        error: [Function: error],
+                        complete: [Function: complete]
+                      },
+                      _parentSubscriber: [Circular *17],
+                      _context: [Circular *19],
+                      _next: [Function (anonymous)],
+                      _error: [Function (anonymous)],
+                      _complete: [Function (anonymous)]
+                    }
+                  }
+                ],
+                closed: false,
+                isStopped: false,
+                hasError: false,
+                thrownError: null
+              }
+            },
+            _subscription: <ref *17> Subscriber {
+              closed: false,
+              _parentOrParents: null,
+              _subscriptions: [
+                SubjectSubscription {
+                  closed: false,
+                  _parentOrParents: [Circular *17],
+                  _subscriptions: null,
+                  subject: <ref *18> Subject {
+                    _isScalar: false,
+                    observers: [ [Circular *17] ],
+                    closed: false,
+                    isStopped: false,
+                    hasError: false,
+                    thrownError: null
+                  },
+                  subscriber: [Circular *17]
+                }
+              ],
+              syncErrorValue: null,
+              syncErrorThrown: false,
+              syncErrorThrowable: true,
+              isStopped: false,
+              destination: <ref *19> SafeSubscriber {
+                closed: false,
+                _parentOrParents: null,
+                _subscriptions: null,
+                syncErrorValue: null,
+                syncErrorThrown: false,
+                syncErrorThrowable: false,
+                isStopped: false,
+                destination: {
+                  closed: true,
+                  next: [Function: next],
+                  error: [Function: error],
+                  complete: [Function: complete]
+                },
+                _parentSubscriber: [Circular *17],
+                _context: [Circular *19],
+                _next: [Function (anonymous)],
+                _error: [Function (anonymous)],
+                _complete: [Function (anonymous)]
+              }
+            },
+            _metadata: { name: 'webpackConfigOptions', path: [ 'my-app:test:' ] }
+          },
+          _tsConfigPath: '/home/pedro/programming/flaskapp2/my-app/tsconfig.spec.json',
+          _rootNames: [
+            '/home/pedro/programming/flaskapp2/my-app/src/test.ts',
+            '/home/pedro/programming/flaskapp2/my-app/src/polyfills.ts',
+            '/home/pedro/programming/flaskapp2/my-app/src/app/app.component.spec.ts',
+            '/home/pedro/programming/flaskapp2/my-app/src/app/be-form.spec.ts',
+            '/home/pedro/programming/flaskapp2/my-app/src/app/capitalizeFirst/capitalize-first.pipe.spec.ts'
+          ],
+          _compilerOptions: {
+            baseUrl: '/home/pedro/programming/flaskapp2/my-app',
+            outDir: '',
+            sourceMap: true,
+            declaration: false,
+            downlevelIteration: true,
+            experimentalDecorators: true,
+            moduleResolution: 2,
+            importHelpers: true,
+            target: 2,
+            module: 6,
+            lib: [ 'lib.es2018.d.ts', 'lib.dom.d.ts' ],
+            types: [ 'jasmine' ],
+            configFilePath: '/home/pedro/programming/flaskapp2/my-app/tsconfig.spec.json',
+            enableIvy: true,
+            genDir: '/home/pedro/programming/flaskapp2/my-app',
+            basePath: '/home/pedro/programming/flaskapp2/my-app',
+            suppressOutputPathCheck: true,
+            inlineSources: true,
+            inlineSourceMap: false,
+            mapRoot: undefined,
+            sourceRoot: undefined,
+            noEmitOnError: false,
+            annotationsAs: 'decorators'
+          },
+          _basePath: '/home/pedro/programming/flaskapp2/my-app',
+          _contextElementDependencyConstructor: [class ContextElementDependency extends ModuleDependency],
+          _platform: 0
+        },
+        SourceMapDevToolPlugin {
+          sourceMapFilename: undefined,
+          sourceMappingURLComment: '\n//# sourceMappingURL=[url]',
+          moduleFilenameTemplate: '[resource-path]',
+          fallbackModuleFilenameTemplate: 'webpack://[namespace]/[resourcePath]?[hash]',
+          namespace: '',
+          options: {
+            filename: undefined,
+            include: [ /js$/, /css$/ ],
+            sourceRoot: 'webpack:///',
+            moduleFilenameTemplate: '[resource-path]',
+            append: undefined
+          }
+        }
+      ]
+    },
+    successCb: [Function: successCb],
+    failureCb: [Function: failureCb],
+    toJSON: [Function: toJSON],
+    logger: Logger {
+      _isScalar: false,
+      name: 'my-app:test:',
+      parent: null,
+      _subject: <ref *13> Subject {
+        _isScalar: false,
+        observers: [
+          <ref *12> Subscriber {
+            closed: false,
+            _parentOrParents: null,
+            _subscriptions: [
+              SubjectSubscription {
+                closed: false,
+                _parentOrParents: [Circular *12],
+                _subscriptions: null,
+                subject: [Circular *13],
+                subscriber: [Circular *12]
+              }
+            ],
+            syncErrorValue: null,
+            syncErrorThrown: false,
+            syncErrorThrowable: true,
+            isStopped: false,
+            destination: <ref *14> SafeSubscriber {
+              closed: false,
+              _parentOrParents: null,
+              _subscriptions: null,
+              syncErrorValue: null,
+              syncErrorThrown: false,
+              syncErrorThrowable: false,
+              isStopped: false,
+              destination: {
+                closed: true,
+                next: [Function: next],
+                error: [Function: error],
+                complete: [Function: complete]
+              },
+              _parentSubscriber: [Circular *12],
+              _context: [Circular *14],
+              _next: [Function (anonymous)],
+              _error: undefined,
+              _complete: undefined
+            }
+          },
+          <ref *15> Subscriber {
+            closed: false,
+            _parentOrParents: null,
+            _subscriptions: [
+              SubjectSubscription {
+                closed: false,
+                _parentOrParents: [Circular *15],
+                _subscriptions: null,
+                subject: [Circular *13],
+                subscriber: [Circular *15]
+              }
+            ],
+            syncErrorValue: null,
+            syncErrorThrown: false,
+            syncErrorThrowable: true,
+            isStopped: false,
+            destination: <ref *16> SafeSubscriber {
+              closed: false,
+              _parentOrParents: null,
+              _subscriptions: null,
+              syncErrorValue: null,
+              syncErrorThrown: false,
+              syncErrorThrowable: false,
+              isStopped: false,
+              destination: {
+                closed: true,
+                next: [Function: next],
+                error: [Function: error],
+                complete: [Function: complete]
+              },
+              _parentSubscriber: [Circular *15],
+              _context: [Circular *16],
+              _next: undefined,
+              _error: undefined,
+              _complete: [Function (anonymous)]
+            }
+          }
+        ],
+        closed: false,
+        isStopped: false,
+        hasError: false,
+        thrownError: null
+      },
+      _obs: Observable {
+        _isScalar: false,
+        source: <ref *13> Subject {
+          _isScalar: false,
+          observers: [
+            <ref *12> Subscriber {
+              closed: false,
+              _parentOrParents: null,
+              _subscriptions: [
+                SubjectSubscription {
+                  closed: false,
+                  _parentOrParents: [Circular *12],
+                  _subscriptions: null,
+                  subject: [Circular *13],
+                  subscriber: [Circular *12]
+                }
+              ],
+              syncErrorValue: null,
+              syncErrorThrown: false,
+              syncErrorThrowable: true,
+              isStopped: false,
+              destination: <ref *14> SafeSubscriber {
+                closed: false,
+                _parentOrParents: null,
+                _subscriptions: null,
+                syncErrorValue: null,
+                syncErrorThrown: false,
+                syncErrorThrowable: false,
+                isStopped: false,
+                destination: {
+                  closed: true,
+                  next: [Function: next],
+                  error: [Function: error],
+                  complete: [Function: complete]
+                },
+                _parentSubscriber: [Circular *12],
+                _context: [Circular *14],
+                _next: [Function (anonymous)],
+                _error: undefined,
+                _complete: undefined
+              }
+            },
+            <ref *15> Subscriber {
+              closed: false,
+              _parentOrParents: null,
+              _subscriptions: [
+                SubjectSubscription {
+                  closed: false,
+                  _parentOrParents: [Circular *15],
+                  _subscriptions: null,
+                  subject: [Circular *13],
+                  subscriber: [Circular *15]
+                }
+              ],
+              syncErrorValue: null,
+              syncErrorThrown: false,
+              syncErrorThrowable: true,
+              isStopped: false,
+              destination: <ref *16> SafeSubscriber {
+                closed: false,
+                _parentOrParents: null,
+                _subscriptions: null,
+                syncErrorValue: null,
+                syncErrorThrown: false,
+                syncErrorThrowable: false,
+                isStopped: false,
+                destination: {
+                  closed: true,
+                  next: [Function: next],
+                  error: [Function: error],
+                  complete: [Function: complete]
+                },
+                _parentSubscriber: [Circular *15],
+                _context: [Circular *16],
+                _next: undefined,
+                _error: undefined,
+                _complete: [Function (anonymous)]
+              }
+            }
+          ],
+          closed: false,
+          isStopped: false,
+          hasError: false,
+          thrownError: null
+        }
+      },
+      _subscription: null,
+      _metadata: { name: 'my-app:test:', path: [] }
+    }
+  },
+  jasmineHtmlReporter: { suppressAll: true },
+  coverageReporter: {
+    dir: '/home/pedro/programming/flaskapp2/my-app/coverage/my-app',
+    subdir: '.',
+    reporters: [ { type: 'html' }, { type: 'text-summary' } ]
+  }
+}
+06 01 2021 12:01:31.250:DEBUG [plugin]: Loading inlined plugin (defining framework:jasmine, reporter:karma-jasmine).
+06 01 2021 12:01:31.251:DEBUG [plugin]: Loading inlined plugin (defining launcher:Chrome, launcher:ChromeHeadless, launcher:ChromeCanary, launcher:ChromeCanaryHeadless, launcher:Chromium, launcher:ChromiumHeadless, launcher:Dartium, test).
+06 01 2021 12:01:31.251:DEBUG [plugin]: Loading inlined plugin (defining reporter:kjhtml).
+06 01 2021 12:01:31.251:DEBUG [plugin]: Loading inlined plugin (defining preprocessor:coverage, reporter:coverage).
+06 01 2021 12:01:31.251:DEBUG [plugin]: Loading inlined plugin (defining framework:@angular-devkit/build-angular, reporter:@angular-devkit/build-angular--sourcemap-reporter, reporter:@angular-devkit/build-angular--event-reporter, middleware:@angular-devkit/build-angular--blocker, middleware:@angular-devkit/build-angular--fallback).
+06 01 2021 12:01:34.153:DEBUG [web-server]: Instantiating middleware
+06 01 2021 12:01:34.155:DEBUG [reporter]: Trying to load reporter: @angular-devkit/build-angular--event-reporter
+06 01 2021 12:01:34.156:DEBUG [reporter]: Trying to load color-version of reporter: @angular-devkit/build-angular--event-reporter (@angular-devkit/build-angular--event-reporter_color)
+06 01 2021 12:01:34.156:DEBUG [reporter]: Couldn't load color-version.
+06 01 2021 12:01:34.156:DEBUG [reporter]: Trying to load reporter: @angular-devkit/build-angular--sourcemap-reporter
+06 01 2021 12:01:34.157:DEBUG [reporter]: Trying to load color-version of reporter: @angular-devkit/build-angular--sourcemap-reporter (@angular-devkit/build-angular--sourcemap-reporter_color)
+06 01 2021 12:01:34.157:DEBUG [reporter]: Couldn't load color-version.
+06 01 2021 12:01:34.170:DEBUG [reporter]: Trying to load reporter: kjhtml
+06 01 2021 12:01:34.171:DEBUG [reporter]: Trying to load color-version of reporter: kjhtml (kjhtml_color)
+06 01 2021 12:01:34.171:DEBUG [reporter]: Couldn't load color-version.
+06 01 2021 12:01:34.200:DEBUG [karma-server]: List of files has changed, trying to execute
+06 01 2021 12:01:34.200:WARN [karma]: No captured browser, open http://localhost:9876/
+06 01 2021 12:01:34.204:INFO [karma-server]: Karma v5.1.1 server started at http://localhost:9876/
+06 01 2021 12:01:34.204:INFO [launcher]: Launching browsers Chrome with concurrency unlimited
+06 01 2021 12:01:34.208:INFO [launcher]: Starting browser Chrome
+06 01 2021 12:01:34.209:DEBUG [launcher]: null -> BEING_CAPTURED
+06 01 2021 12:01:34.209:DEBUG [temp-dir]: Creating temp dir at /tmp/karma-6850456
+06 01 2021 12:01:34.209:DEBUG [launcher]: /usr/bin/chromium-browser --user-data-dir=/tmp/karma-6850456 --enable-automation --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --disable-translate --disable-background-timer-throttling --disable-renderer-backgrounding --disable-device-discovery-notifications http://localhost:9876/?id=6850456
+06 01 2021 12:01:37.393:DEBUG [karma-server]: List of files has changed, trying to execute
+06 01 2021 12:01:37.393:WARN [karma]: No captured browser, open http://localhost:9876/
+06 01 2021 12:01:52.888:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:52.889:DEBUG [launcher]: BEING_CAPTURED -> BEING_KILLED
+06 01 2021 12:01:52.889:DEBUG [launcher]: BEING_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:52.926:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:54.241:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:54.242:DEBUG [launcher]: BEING_FORCE_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:54.243:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:54.377:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:54.378:DEBUG [launcher]: BEING_FORCE_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:54.379:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:54.518:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:54.519:DEBUG [launcher]: BEING_FORCE_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:54.520:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:54.761:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:54.761:DEBUG [launcher]: BEING_FORCE_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:54.761:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:54.889:WARN [launcher]: Chrome was not killed in 2000 ms, sending SIGKILL.
+06 01 2021 12:01:54.939:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:54.940:DEBUG [launcher]: BEING_FORCE_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:54.940:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:56.313:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:56.314:DEBUG [launcher]: BEING_FORCE_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:56.314:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:56.406:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:56.407:DEBUG [launcher]: BEING_FORCE_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:56.407:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:56.577:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:56.577:DEBUG [launcher]: BEING_FORCE_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:56.577:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:56.794:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:56.795:DEBUG [launcher]: BEING_FORCE_KILLED -> BEING_FORCE_KILLED
+06 01 2021 12:01:56.795:DEBUG [proxy]: Destroying proxy agents
+06 01 2021 12:01:56.890:WARN [launcher]: Chrome was not killed by SIGKILL in 2000 ms, continuing.
+06 01 2021 12:01:56.892:DEBUG [launcher]: Process Chrome exited with code -1 and signal null
+06 01 2021 12:01:56.893:DEBUG [temp-dir]: Cleaning temp dir /tmp/karma-6850456
+06 01 2021 12:01:56.896:DEBUG [launcher]: Finished all browsers
+06 01 2021 12:01:56.896:DEBUG [launcher]: BEING_FORCE_KILLED -> FINISHED
+06 01 2021 12:01:56.896:DEBUG [launcher]: FINISHED -> FINISHED
+06 01 2021 12:01:56.902:DEBUG [karma-server]: Received stop event, exiting.
+06 01 2021 12:01:56.902:DEBUG [launcher]: Disconnecting all browsers
+06 01 2021 12:01:56.902:DEBUG [launcher]: FINISHED -> BEING_FORCE_KILLED
+06 01 2021 12:01:56.902:DEBUG [proxy]: Destroying proxy agents

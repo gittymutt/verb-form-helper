@@ -4,7 +4,7 @@
 
 
 
-<h1>{{ be.get(be.sing) }}</h1>
+<h1>{{ be.get() }}</h1>
 <div>
     <input id="singular" type="radio" class=""  
     name="number"  value="singular" (change)="radioChange($event)" checked/>
@@ -30,6 +30,10 @@
 {{ subject }} 
 {{ verb.baseform }} ?
 <br>
+
+<h2>Present Progressive/Continuous</h2>
+{{ subject }} 
+
 
 <h2>Simple Past</h2>
 {{ subject | capitalizeFirst }} 

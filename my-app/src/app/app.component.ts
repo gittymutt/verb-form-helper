@@ -19,6 +19,7 @@ export class AppComponent  {
   isSingular: Boolean = true;
   isChecked = new FormControl(true);
   be = new Be();
+  isBe: Boolean = false
   
   constructor (private http: HttpClient) {
 
@@ -28,7 +29,9 @@ export class AppComponent  {
         console.log("incoming datatype is: ", typeof(data));
         
         this.verb = data;
+        
         this.subject = data['subject'];
+
       });
     
   }
@@ -42,6 +45,10 @@ export class AppComponent  {
         console.log("subject:", this.subject);
         console.log( this.isChecked.value );
         
+        this.isBe = data['baseform'] === 'be'
+        
+
+
         });
   }
   
@@ -53,4 +60,7 @@ export class AppComponent  {
       this.isSingular = false;
     }
   }
+
+
+
 }
