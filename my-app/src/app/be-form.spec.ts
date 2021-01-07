@@ -50,31 +50,30 @@ describe('Be', () => {
     let inputs = [
       {'subject': Be.I, 'tense': Be.past, 'type': Be.neg, 'isContracted': true},
     ];
-    
-    
-
-    
     inputs.forEach ( (input)=> {
-     
       expect(be.get(input)).toBe(" wasn\'t");
-                  
-
-      
-      
     });
   });
 
 
-  /*
+  
   it('should output am ', ()=>{
-    let inputs = [{'subject': Be.I, 'tense': Be.pres, 'type': Be.ques}];
+    let inputs = [
+      {'subject': Be.I, 'tense': Be.pres, 'type': Be.ques},
+      ];
     inputs.forEach ( (input)=> {
-      expect(be.get(input.subject,
-                    input.tense,
-                    input.type)).toBe("am");
+      expect(be.get(input)).toBe("am");
     });
   });
-*/
+
+  it('should output am ', ()=>{
+    let inputs = [
+      
+      {'subject': Be.I, 'tense': Be.pres, 'type': Be.affirm}];
+    inputs.forEach ( (input)=> {
+      expect(be.get(input)).toBe(" am");
+    });
+  });
 
 /*
     it('should output is ', ()=>{

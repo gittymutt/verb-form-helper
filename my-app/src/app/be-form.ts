@@ -26,7 +26,7 @@ export class Be {
         subject = Be.pl,
         tense = Be.pres,
         type = Be.affirm,
-        isContracted = false
+        isContracted = false,
         }: NamedParameters): string {
             
         if (tense === Be.pastPart) { return "been"; }
@@ -37,14 +37,33 @@ export class Be {
                 this.verbText += ' not';
                 return isContracted ? ' wasn\'t' : this.verbText
             }
+        }  
+        // simple present is all that's left
+        if (subject === Be.I) {
+            this.verbText = ' am';           
+            if (type === Be.ques) {return this.verbText.trim();}
+            if (type === Be.affirm) {
+                return (this.isContracted ? '\'m' : this.verbText);
+            }
 
-            
-
+            // pres negative 
+            this.verbText += ' not';
+            if (this.isContracted) {
+                return '\'m not';
+            } else {
+                return this.verbText;
+            }
         }
+         
+        return 'didnt find anything :(' + 
+        subject.toString() +
+        tense.toString() +
+        type.toString();   
        
      
         
     }
+    
 
     
 }
