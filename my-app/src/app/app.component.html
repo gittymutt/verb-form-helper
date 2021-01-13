@@ -19,47 +19,53 @@
  </div>
 
 
- 
-<h2>Simple Present</h2>
-{{ subject | capitalizeFirst }} 
-{{ (isSingular)?verb.thirdpers:verb.baseform}}
-<br>
-{{ subject | capitalizeFirst }} 
-{{ (isSingular)?"doesn't":"don't"}} 
-{{ verb.baseform }}
-<br>
-{{ (isSingular)?"Does":"Do"}} 
-{{ subject }} 
-{{ verb.baseform }} ?
-<br>
-
-<h2>Present Progressive/Continuous</h2>
-{{ subject }} 
 
 
-<h2>Simple Past</h2>
-{{ subject | capitalizeFirst }} 
-{{ verb.simplepast }} 
-<br>
-{{ subject | capitalizeFirst }} 
-didn't {{ verb.baseform }}
-<br>
-Did {{ subject }} 
-{{ verb.baseform }} ?
-<br>
+<div *ngIf="isBe; else elseBlock">
+   This be a be
+</div>
 
-<h2>Present Perfect</h2>
-{{ subject }} 
-{{ (isSingular)?"has":"have" }} 
-{{ verb.pastpart }}
-<br>
-{{ subject }} 
-{{ (isSingular)?"hasn't":"haven't" }} 
-{{ verb.pastpart }}
-<br>
-{{ (isSingular)?"has":"have" }} 
-{{ subject }} 
-{{ verb.pastpart }} ?
+<ng-template #elseBlock>
+   <h2>Simple Present</h2>
+   {{ subject | capitalizeFirst }} 
+   {{ (isSingular)?verb.thirdpers:verb.baseform}}
+   <br>
+   {{ subject | capitalizeFirst }} 
+   {{ (isSingular)?"doesn't":"don't"}} 
+   {{ verb.baseform }}
+   <br>
+   {{ (isSingular)?"Does":"Do"}} 
+   {{ subject }} 
+   {{ verb.baseform }} ?
+   <br>
 
+   <h2>Present Progressive/Continuous</h2>
+   {{ subject }} {{ be.affC }} {{ verb.ingform}} <br>
+   {{ subject }} {{ be.negC1 }} {{ verb.ingform}} <br>
+   {{ be.affNc }} {{ subject }} {{ verb.ingform}} ?<br>
+  
 
+   <h2>Simple Past</h2>
+   {{ subject | capitalizeFirst }} 
+   {{ verb.simplepast }} 
+   <br>
+   {{ subject | capitalizeFirst }} 
+   didn't {{ verb.baseform }}
+   <br>
+   Did {{ subject }} 
+   {{ verb.baseform }} ?
+   <br>
 
+   <h2>Present Perfect</h2>
+   {{ subject }} 
+   {{ (isSingular)?"has":"have" }} 
+   {{ verb.pastpart }}
+   <br>
+   {{ subject }} 
+   {{ (isSingular)?"hasn't":"haven't" }} 
+   {{ verb.pastpart }}
+   <br>
+   {{ (isSingular)?"has":"have" }} 
+   {{ subject }} 
+   {{ verb.pastpart }} ?
+</ng-template>
