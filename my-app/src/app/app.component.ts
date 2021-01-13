@@ -16,12 +16,20 @@ export class AppComponent  {
   verbForm: string;
   url1:string = 'http://localhost:5000/?subject=';
   url2:string = '&verb=';
-  isSingular: Boolean = true;
-  isChecked = new FormControl(true);
-  be = new Be();
-  isBe: Boolean = false
   
+  // word forms
+  isSingular: boolean = true;
+  isI: boolean = false;
+  be = new Be();
+  isBe: boolean = false
+  
+  // interface
+  isChecked = new FormControl(true);
+
+
+
   constructor (private http: HttpClient) {
+    this.be = new Be();
 
 
     this.http.get(this.url1+'the%20dog'+this.url2+'go')
@@ -46,8 +54,8 @@ export class AppComponent  {
         console.log( this.isChecked.value );
         
         this.isBe = data['baseform'] === 'be'
-        
-
+        this.setNumber();
+        this.be.set(this.isSingular, this.isI);
 
         });
   }
@@ -55,12 +63,44 @@ export class AppComponent  {
   radioChange(event) {
     console.log("event: " , event.target.value);
     if (event.target.value === "singular") {
-      this.isSingular = true;
-    } else {
-      this.isSingular = false;
+        this.isSingular = true;
+      } else {
+        this.isSingular = false;
+      }
+      this.be.set(this.isSingular, this.isI);
     }
-  }
 
+    setNumber() {
+      if ("i" === this.subject.trim().toLowerCase()) {
+        this.isI = true;
+        this.isSingular = false;
+        return;
+      }
+      this.isI = false;
+
+      let singPronouns: string[] = ['he','she', 'it'];
+      singPronouns.forEach(element => {
+        if (element === this.subject.trim().toLowerCase()) {
+          this.isSingular = true;
+          return;
+        }
+      });
+
+      let plPronouns: string[] = ['we','they', 'you'];
+      plPronouns.forEach(element => {
+        if (element === this.subject.trim().toLowerCase()) {
+          this.isSingular = false;
+          return;
+        }
+      });
+
+
+      return 1;
+    }
 
 
 }
+
+
+
+

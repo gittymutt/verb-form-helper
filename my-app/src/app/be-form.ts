@@ -1,9 +1,49 @@
-import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
-
-
-
 export class Be {
-    static I: number = 0;
+    affNc: string = "is";
+    affC: string = "'s";
+    negNc: string = "is not";
+    negC1: string = "isn't";
+    negC2: string = "'s not";
+
+    set(
+        
+        isSingular: boolean = false,
+        isI: boolean = false ) {
+
+        if (isI) {
+            this.affC = "'m";
+            this.affNc = "am";
+            this.negC1 = "'m not";
+            this.negC2 = "";
+            return;
+        }
+
+        if (!isSingular) {
+            this.affC = "'re";
+            this.affNc = "are";
+            this.negC1 = "'re not";
+            this.negC2 = "aren't";
+            return;
+        } 
+
+        this.affC = "'s";
+        this.affNc = "is";
+        this.negC1 = "'s not";
+        this.negC2 = "isn't";
+        return;
+    }
+    
+}
+
+
+
+
+
+
+
+ /* 
+
+ static I: number = 0;
     static sing: number = 1;
     static pl: number = 2;
     static pres: number = 3;
@@ -53,21 +93,37 @@ export class Be {
 
         // Simple present is all that's left.
         if (subject === Be.I) {
-            this.verbText = ' am';           
-            if (type === Be.ques) {return this.verbText.trim();}
+            if (type === Be.ques) return 'am';
             if (type === Be.affirm) {
-                return (this.isContracted ? '\'m' : this.verbText);
+                return (this.isContracted ? '\'m' : ' am');
             }
-
-            // pres negative 
-            this.verbText += ' not';
             if (this.isContracted) {
                 return '\'m not';
             } else {
-                return this.verbText;
+                return ' am not';
             }
         }
-         
+        
+        // Simple presents that are not am are left.
+        if (tense === Be.past) {
+            this.verbText = 'are';
+            if (subject === Be.sing) {
+                this.verbText = 'is';
+            }
+            if (type === Be.ques) return this.verbText;
+            this.verbText = ' ' + this.verbText;
+            if (type !== Be.neg) return this.verbText;
+            // The rest should be negative.
+            if (!isContracted) {
+                return this.verbText + ' not';
+            } else {
+                return this.verbText + 'n\'t';
+            }
+
+        }
+
+
+
         return 'didnt find anything :(' + 
         subject.toString() +
         tense.toString() +
@@ -76,14 +132,11 @@ export class Be {
      
         
     }
-    
 
-    
-}
-
-export interface NamedParameters  {
+    export interface NamedParameters  {
     subject?: number;
     tense?: number;
     type?: number;
     isContracted?: boolean;
  }
+    */
