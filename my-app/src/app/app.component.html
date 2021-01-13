@@ -4,7 +4,7 @@
 
 
 
-<h1>{{ be.get() }}</h1>
+
 <div>
     <input id="singular" type="radio" class=""  
     name="number"  value="singular" (change)="radioChange($event)" checked/>
@@ -18,6 +18,8 @@
     <label class="custom-control-label" for="plural">Plural</label>
  </div>
 
+
+ 
 <h2>Simple Present</h2>
 {{ subject | capitalizeFirst }} 
 {{ (isSingular)?verb.thirdpers:verb.baseform}}
