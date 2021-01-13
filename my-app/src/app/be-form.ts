@@ -1,3 +1,4 @@
+import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 
 
 
@@ -31,14 +32,26 @@ export class Be {
             
         if (tense === Be.pastPart) { return "been"; }
         if (tense === Be.past) {
-            if (subject === Be.I) {
-                this.verbText = ' was';
-                if (type !== Be.neg) return this.verbText;
-                this.verbText += ' not';
-                return isContracted ? ' wasn\'t' : this.verbText
+            this.verbText = 'were';
+            if (subject === Be.I || subject === Be.sing) {
+                this.verbText = 'was';
             }
-        }  
-        // simple present is all that's left
+            if (type === Be.ques) return this.verbText;
+            this.verbText = ' ' + this.verbText;
+            if (type !== Be.neg) return this.verbText;
+            // The rest should be negative.
+            if (!isContracted) {
+                return this.verbText + ' not';
+            } else {
+                return this.verbText + 'n\'t';
+            }
+
+        }
+        
+        
+
+
+        // Simple present is all that's left.
         if (subject === Be.I) {
             this.verbText = ' am';           
             if (type === Be.ques) {return this.verbText.trim();}
