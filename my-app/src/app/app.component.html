@@ -6,14 +6,14 @@
 
 
 <div>
-    <input id="singular" type="radio" class=""  
-    name="number"  value="singular" (change)="radioChange($event)" checked/>
+    <input  type="radio" 
+    name="number"  value="singular" (change)="radioChange($event)" [formControl]="number" checked/>
     <label class="custom-control-label" for="singular">Singular</label>
  </div>
 
  <div>
-    <input id="plural" type="radio" class=""  
-    name="number" value="plural" formControlName="number" 
+    <input  type="radio"   
+    name="number" value="plural" [formControl]="number" 
     (change)="radioChange($event)" />
     <label class="custom-control-label" for="plural">Plural</label>
  </div>
