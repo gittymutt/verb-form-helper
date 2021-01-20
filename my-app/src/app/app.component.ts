@@ -29,6 +29,7 @@ export class AppComponent  {
 
   constructor (private http: HttpClient) {
     this.be = new Be();
+    this.number.setValue('singular');
 
 
     this.http.get(this.url1+'the%20dog'+this.url2+'go')

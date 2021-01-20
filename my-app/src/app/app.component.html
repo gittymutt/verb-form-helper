@@ -2,20 +2,20 @@
 <input type="text" placeholder="put verb here" value="go" #verbTxt>
 <button (click)="change(subjectTxt.value, verbTxt)">Change</button>
 
-
-
-
 <div>
     <input  type="radio" 
-    name="number"  value="singular" (change)="radioChange($event)" [formControl]="number" checked/>
-    <label class="custom-control-label" for="singular">Singular</label>
+            name="number"  
+            value="singular" 
+            (change)="radioChange($event)" 
+            [formControl]="number" 
+            />
+    <label class="custom-control-label" for="singular">Third person singular</label>
  </div>
-
  <div>
     <input  type="radio"   
     name="number" value="plural" [formControl]="number" 
     (change)="radioChange($event)" />
-    <label class="custom-control-label" for="plural">Plural</label>
+    <label class="custom-control-label" for="plural">Other</label>
  </div>
 
 
