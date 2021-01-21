@@ -1,23 +1,40 @@
-<input type="text" placeholder="put subject here" value="the dog" #subjectTxt>
-<input type="text" placeholder="put verb here" value="go" #verbTxt>
+<form [formGroup]="form">
+<input 
+   type="text" 
+   placeholder="put subject here" 
+   value="the dog" 
+   #subjectTxt
+   formControlName="subject"
+   >
+<input 
+   type="text" 
+   placeholder="put verb here" 
+   value="go" 
+   #verbTxt
+   formControlName="verb">
 <button (click)="change(subjectTxt.value, verbTxt)">Change</button>
 
 <div>
-    <input  type="radio" 
-            name="number"  
-            value="singular" 
-            (change)="radioChange($event)" 
-            [formControl]="number" 
-            />
+    <input  
+      type="radio" 
+      name="number"  
+      value="singular" 
+      (change)="radioChange($event)" 
+      
+      formControlName="number">
     <label class="custom-control-label" for="singular">Third person singular</label>
  </div>
  <div>
-    <input  type="radio"   
-    name="number" value="plural" [formControl]="number" 
-    (change)="radioChange($event)" />
-    <label class="custom-control-label" for="plural">Other</label>
+    <input  
+      type="radio"   
+      name="number" 
+      value="plural" 
+     
+      (change)="radioChange($event)"
+      formControlName="number">
+   <label class="custom-control-label" for="plural">Other</label>
  </div>
-
+</form>
 
 
 

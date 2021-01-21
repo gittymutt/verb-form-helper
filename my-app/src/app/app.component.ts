@@ -10,7 +10,7 @@ import { Be } from './be-form'
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent  {
+export class AppComponent implements OnInit {
   subject: string;
   verb;     // what data type should this be?
   verbForm: string;
@@ -24,14 +24,19 @@ export class AppComponent  {
   isBe: boolean = false
   
   // interface
-  number = new FormControl();
+  //number = new FormControl();
+  form: FormGroup;
 
+  ngOnInit() {
+    this.form = new FormGroup({
+      subject: new FormControl('The dog'),
+      verb: new FormControl('go'),
+      number: new FormControl('singular')
+    });
+  }
 
   constructor (private http: HttpClient) {
     this.be = new Be();
-    this.number.setValue('singular');
-
-
     this.http.get(this.url1+'the%20dog'+this.url2+'go')
       .toPromise().then( data => {
         console.log("incoming datatype is: ", typeof(data));
@@ -50,27 +55,29 @@ export class AppComponent  {
         .toPromise().then( data => {
         this.verb = data;
         this.subject = data['subject'];
-        console.log("subject:", this.subject);
+        //console.log("subject:", this.subject);
         
         
         this.isBe = data['baseform'] === 'be'
         this.setNumber();
         this.be.set(this.isSingular, this.isI);
-        console.log("radio button:" + this.number.value);
+        //console.log("radio button:" + this.number.value);
         });
   }
   
   radioChange(event) {
-    console.log("event: " , event.target.value);
+    //console.log("event: " , event.target.value);
     if (event.target.value === "singular") {
         this.isSingular = true;
-        this.number.setValue('singular');
+        //this.number.setValue('singular');
+        this.form.patchValue({number: 'singular'});
 
         
         
       } else {
         this.isSingular = false;
-        this.number.setValue('plural');
+        //this.number.setValue('plural');
+        this.form.patchValue({number: 'plural'});
       }
       this.be.set(this.isSingular, this.isI);
     }
@@ -79,7 +86,8 @@ export class AppComponent  {
       if ("i" === this.subject.trim().toLowerCase()) {
         this.isI = true;
         this.isSingular = false;
-        this.number.setValue('plural');
+        //this.number.setValue('plural');
+        this.form.patchValue({number: 'plural'});
         return;
       }
       this.isI = false;
@@ -87,7 +95,8 @@ export class AppComponent  {
       let singPronouns: string[] = ['he','she', 'it'];
       singPronouns.forEach(element => {
         if (element === this.subject.trim().toLowerCase()) {
-          this.number.patchValue('singular');
+          //this.number.patchValue('singular');
+          this.form.patchValue({number: 'singular'});
           this.isSingular = true;
           return;
         }
@@ -96,7 +105,10 @@ export class AppComponent  {
       let plPronouns: string[] = ['we','they', 'you'];
       plPronouns.forEach(element => {
         if (element === this.subject.trim().toLowerCase()) {
-          this.number.patchValue('plural');
+          //this.number.patchValue('plural');
+          this.form.patchValue({number: 'plural'});
+          console.log("form:" + this.form);
+          
           this.isSingular = false;
           return;
         }
