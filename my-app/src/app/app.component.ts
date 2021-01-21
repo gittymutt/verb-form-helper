@@ -68,55 +68,63 @@ export class AppComponent implements OnInit {
   radioChange(event) {
     //console.log("event: " , event.target.value);
     if (event.target.value === "singular") {
-        this.isSingular = true;
-        //this.number.setValue('singular');
-        this.form.patchValue({number: 'singular'});
-
+        this.setSingular();
         
         
       } else {
-        this.isSingular = false;
-        //this.number.setValue('plural');
-        this.form.patchValue({number: 'plural'});
+       
+        this.setPlural();
       }
       this.be.set(this.isSingular, this.isI);
-    }
+  }
 
-    setNumber() {
-      if ("i" === this.subject.trim().toLowerCase()) {
-        this.isI = true;
-        this.isSingular = false;
-        //this.number.setValue('plural');
-        this.form.patchValue({number: 'plural'});
+  setNumber() {
+    if ("i" === this.subject.trim().toLowerCase()) {
+      
+      this.setI();
+      return;
+    }
+    this.isI = false;
+
+    let singPronouns: string[] = ['he','she', 'it'];
+    singPronouns.forEach(element => {
+      if (element === this.subject.trim().toLowerCase()) {
+        
+        this.setSingular();
         return;
       }
-      this.isI = false;
+    });
 
-      let singPronouns: string[] = ['he','she', 'it'];
-      singPronouns.forEach(element => {
-        if (element === this.subject.trim().toLowerCase()) {
-          //this.number.patchValue('singular');
-          this.form.patchValue({number: 'singular'});
-          this.isSingular = true;
-          return;
-        }
-      });
-
-      let plPronouns: string[] = ['we','they', 'you'];
-      plPronouns.forEach(element => {
-        if (element === this.subject.trim().toLowerCase()) {
-          //this.number.patchValue('plural');
-          this.form.patchValue({number: 'plural'});
-          console.log("form:" + this.form);
-          
-          this.isSingular = false;
-          return;
-        }
-      });
+    let plPronouns: string[] = ['we','they', 'you'];
+    plPronouns.forEach(element => {
+      if (element === this.subject.trim().toLowerCase()) {
+        
+        this.setPlural();
+        return;
+      }
+    });
 
 
-      return 1;
-    }
+  return;
+  }
+
+  setSingular() {
+    this.form.patchValue({number: 'singular'});
+    this.isSingular = true;
+    this.isI = false;
+  }
+
+  setPlural() {
+    this.isSingular = false;
+    this.form.patchValue({number: 'plural'});
+    this.isI = false;
+  }
+
+  setI() {
+    this.form.patchValue({number: 'singular'});
+    this.isSingular = true;
+    this.isI = true;
+  }
 
 
 }
