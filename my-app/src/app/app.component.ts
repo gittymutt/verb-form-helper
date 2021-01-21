@@ -24,7 +24,6 @@ export class AppComponent implements OnInit {
   isBe: boolean = false
   
   // interface
-  //number = new FormControl();
   form: FormGroup;
 
   ngOnInit() {
@@ -40,39 +39,27 @@ export class AppComponent implements OnInit {
     this.http.get(this.url1+'the%20dog'+this.url2+'go')
       .toPromise().then( data => {
         console.log("incoming datatype is: ", typeof(data));
-        
         this.verb = data;
-        
         this.subject = data['subject'];
-
       });
-    
   }
 
   change(subjectTxt: string, verbTxt: { value: string; }, ) {
     console.log("verbTxt: " + verbTxt.value)
     this.http.get(this.url1+subjectTxt+this.url2+verbTxt.value)
         .toPromise().then( data => {
-        this.verb = data;
-        this.subject = data['subject'];
-        //console.log("subject:", this.subject);
-        
-        
-        this.isBe = data['baseform'] === 'be'
-        this.setNumber();
-        this.be.set(this.isSingular, this.isI);
-        //console.log("radio button:" + this.number.value);
+          this.verb = data;
+          this.subject = data['subject'];
+          this.isBe = data['baseform'] === 'be'
+          this.setNumber();
+          this.be.set(this.isSingular, this.isI);
         });
   }
   
   radioChange(event) {
-    //console.log("event: " , event.target.value);
     if (event.target.value === "singular") {
         this.setSingular();
-        
-        
       } else {
-       
         this.setPlural();
       }
       this.be.set(this.isSingular, this.isI);
@@ -80,7 +67,6 @@ export class AppComponent implements OnInit {
 
   setNumber() {
     if ("i" === this.subject.trim().toLowerCase()) {
-      
       this.setI();
       return;
     }
@@ -89,7 +75,6 @@ export class AppComponent implements OnInit {
     let singPronouns: string[] = ['he','she', 'it'];
     singPronouns.forEach(element => {
       if (element === this.subject.trim().toLowerCase()) {
-        
         this.setSingular();
         return;
       }
@@ -98,13 +83,10 @@ export class AppComponent implements OnInit {
     let plPronouns: string[] = ['we','they', 'you'];
     plPronouns.forEach(element => {
       if (element === this.subject.trim().toLowerCase()) {
-        
         this.setPlural();
         return;
       }
     });
-
-
   return;
   }
 
