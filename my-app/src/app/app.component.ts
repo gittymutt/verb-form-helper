@@ -104,7 +104,7 @@ export class AppComponent implements OnInit {
 
   setI() {
     this.form.patchValue({number: 'singular'});
-    this.isSingular = true;
+    this.isSingular = false;
     this.isI = true;
   }
 
