@@ -1,0 +1,17 @@
+<h2>Simple Present</h2>
+
+{{ subject }} {{ be.affNc }} ______<br>
+{{ subject }} {{ be.negNc }} ______<br>
+{{ be.affNc }} {{ subject }} _______ ?<br>
+
+<h2>Simple Past</h2>
+
+{{ subject }} {{ be.affPNc }} ______<br>
+{{ subject }} {{ be.negPNc }} ______<br>
+{{ be.affNc }} {{ subject }} _______ ?<br>
+
+<h2>Present Perfect</h2>
+
+{{ subject }} {{ isSingular?'has':'have' }} been ______ <br>
+{{ subject }} {{ isSingular?'has':'have' }} not been ______ <br>
+{{ isSingular?'has':'have' }} {{ subject }} been ______ ? <br>

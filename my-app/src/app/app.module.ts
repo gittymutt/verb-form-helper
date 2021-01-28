@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CapitalizeFirstPipe } from './capitalizeFirst/capitalize-first.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShowBeComponent } from './show-be/show-be.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CapitalizeFirstPipe
+    CapitalizeFirstPipe,
+    ShowBeComponent
     
   ],
   imports: [

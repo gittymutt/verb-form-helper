@@ -38,7 +38,12 @@
 
 
 <div *ngIf="isBe; else elseBlock">
-   This be a be
+   <app-show-be 
+      [subject]="subject"
+      [be]="be"
+      [isSingular]="isSingular"
+   ></app-show-be>
+
 </div>
 
 <ng-template #elseBlock>

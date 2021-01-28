@@ -4,7 +4,10 @@ export class Be {
     negNc: string = "is not";
     negC1: string = "isn't";
     negC2: string = "'s not";
-
+    affPNc: string = "was";
+    negPNc: string = "was not";
+    negPC1: string = "wasn't";
+    
     set(
         
         isSingular: boolean = false,
@@ -15,6 +18,9 @@ export class Be {
             this.affNc = "am";
             this.negC1 = "'m not";
             this.negC2 = "";
+            this.affPNc = "was";
+            this.negPNc = "was not";
+            this.negPC1 = "wasn't";
             return;
         }
 
@@ -23,6 +29,9 @@ export class Be {
             this.affNc = "are";
             this.negC1 = "'re not";
             this.negC2 = "aren't";
+            this.affPNc = "were";
+            this.negPNc = "were not";
+            this.negPC1 = "weren't";
             return;
         } 
 
@@ -30,6 +39,9 @@ export class Be {
         this.affNc = "is";
         this.negC1 = "'s not";
         this.negC2 = "isn't";
+        this.affPNc = "was";
+        this.negPNc = "was not";
+        this.negPC1 = "wasn't";
         return;
     }
     
