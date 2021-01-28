@@ -104,6 +104,8 @@ export class AppComponent implements OnInit {
 
   setI() {
     this.form.patchValue({number: 'plural'});
+    this.form.patchValue({ subject: 'I'});
+    this.subject = "I";
     this.isSingular = false;
     this.isI = true;
   }
