@@ -57,13 +57,13 @@
    <br>
    {{ (isSingular)?"Does":"Do"}} 
    {{ subject }} 
-   {{ verb.baseform }} ?
+   {{ verb.baseform }}?
    <br>
 
    <h2>Present Progressive/Continuous</h2>
-   {{ subject }} {{ be.affC }} {{ verb.ingform}} <br>
-   {{ subject }} {{ be.negC1 }} {{ verb.ingform}} <br>
-   {{ be.affNc }} {{ subject }} {{ verb.ingform}} ?<br>
+   {{ subject | capitalizeFirst }} {{ be.affC }} {{ verb.ingform}} <br>
+   {{ subject | capitalizeFirst }} {{ be.negC1 }} {{ verb.ingform}} <br>
+   {{ be.affNc | capitalizeFirst }} {{ subject }} {{ verb.ingform}} ?<br>
   
 
    <h2>Simple Past</h2>
@@ -74,19 +74,19 @@
    didn't {{ verb.baseform }}
    <br>
    Did {{ subject }} 
-   {{ verb.baseform }} ?
+   {{ verb.baseform }}?
    <br>
 
    <h2>Present Perfect</h2>
-   {{ subject }} 
+   {{ subject | capitalizeFirst }} 
    {{ (isSingular)?"has":"have" }} 
    {{ verb.pastpart }}
    <br>
-   {{ subject }} 
+   {{ subject | capitalizeFirst }} 
    {{ (isSingular)?"hasn't":"haven't" }} 
    {{ verb.pastpart }}
    <br>
-   {{ (isSingular)?"has":"have" }} 
+   {{ (isSingular)?"Has":"Have" }} 
    {{ subject }} 
-   {{ verb.pastpart }} ?
+   {{ verb.pastpart }}?
 </ng-template>

@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   verb;     // what data type should this be?
   verbForm: string;
   url1:string = 'http://localhost:5000/?subject=';
+  // url1:string = 'https://petersenglish.nyc/app/?subject=';
   url2:string = '&verb=';
   
   // word forms
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      subject: new FormControl('The dog'),
+      subject: new FormControl('the dog'),
       verb: new FormControl('go'),
       number: new FormControl('singular')
     });

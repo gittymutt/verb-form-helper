@@ -1,0 +1,16 @@
+How to set up the server to serve 
+
+follow instructions here https://www.youtube.com/watch?v=YFBRVJPhDGY
+also here https://flask.palletsprojects.com/en/1.1.x/deploying/mod_wsgi/#configuring-apache
+be sure to use virtualenv to make the venv. Otherwise, you won't have the activate_this.py file
+don't put the venv directory directly in the app directory
+
+be careful that you are using python3 to make the env. don't forget to install flask and flask-cors with pip 
+into the env
+
+
+
+
+
+install pattern3 (not pattern) and add the missing line if you get an error from tree.py
+
