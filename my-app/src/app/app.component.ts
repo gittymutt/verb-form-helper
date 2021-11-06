@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   isI: boolean = false;
   be = new Be();
   isBe: boolean = false
-  
+  isVerb: boolean = true;
   // interface
   form: FormGroup;
 
@@ -42,11 +42,14 @@ export class AppComponent implements OnInit {
         console.log("incoming datatype is: ", typeof(data));
         this.verb = data;
         this.subject = data['subject'];
+        this.isVerb = data['isVerb'];
+        
+        
       });
   }
 
   change(subjectTxt: string, verbTxt: { value: string; }, ) {
-    console.log("verbTxt: " + verbTxt.value)
+    //console.log("verbTxt: " + verbTxt.value)
     this.http.get(this.url1+subjectTxt+this.url2+verbTxt.value)
         .toPromise().then( data => {
           this.verb = data;
@@ -54,6 +57,8 @@ export class AppComponent implements OnInit {
           this.isBe = data['baseform'] === 'be'
           this.setNumber();
           this.be.set(this.isSingular, this.isI);
+          this.isVerb = data['isVerb'];
+          console.log("Is a verb: " + this.isVerb);
         });
   }
   
@@ -63,7 +68,13 @@ export class AppComponent implements OnInit {
       } else {
         this.setPlural();
       }
+      if ("i" === this.subject.trim().toLowerCase()) {
+        this.setI();
+        return;
+      }
+
       this.be.set(this.isSingular, this.isI);
+      console.log(this.isI);
   }
 
   setNumber() {
