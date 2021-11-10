@@ -24,7 +24,7 @@ def get_forms(subject, verb):
     simplepast = conjugate(verb, "p")
     pastpart = conjugate(verb, "VBN")
     ingform = conjugate(verb, "VBG")
-    isVerb = is_verb(verb)
+    isVerb = is_verb(baseform)
     return {'thirdpers': thirdpers, 
       'simplepast': simplepast, 
       'pastpart': pastpart, 

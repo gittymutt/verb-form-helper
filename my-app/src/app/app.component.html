@@ -36,6 +36,8 @@
 </form>
 
 
+<div *ngIf="isVerb; else notaVerb">
+
 
 <div *ngIf="isBe; else elseBlock">
    <app-show-be 
@@ -89,4 +91,10 @@
    {{ (isSingular)?"Has":"Have" }} 
    {{ subject }} 
    {{ verb.pastpart }}?
+</ng-template>
+
+</div>
+
+<ng-template  #notaVerb>
+   <h2><span class="not-a-verb">"{{ boxString }}"</span> is not a verb. Try again.</h2>
 </ng-template>

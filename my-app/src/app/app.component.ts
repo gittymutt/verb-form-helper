@@ -17,7 +17,8 @@ export class AppComponent implements OnInit {
   url1:string = 'http://localhost:5000/?subject=';
   // url1:string = 'https://petersenglish.nyc/app/?subject=';
   url2:string = '&verb=';
-  
+  boxString: string = "";
+
   // word forms
   isSingular: boolean = true;
   isI: boolean = false;
@@ -59,6 +60,7 @@ export class AppComponent implements OnInit {
           this.be.set(this.isSingular, this.isI);
           this.isVerb = data['isVerb'];
           console.log("Is a verb: " + this.isVerb);
+          this.boxString = verbTxt.value;
         });
   }
   
