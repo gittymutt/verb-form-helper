@@ -18,24 +18,47 @@ def hello_world():
     forms = get_forms(subject, verb)
     return forms
 
-def get_forms(subject, verb):
+def get_forms(subject, word):
+    pos =[]
+    verb = word
+    if wn.morphy(verb, wn.VERB):
+      verb = wn.morphy(verb, wn.VERB)
+      pos = get_pos(verb)
+    pos += get_pos(wn.morphy(verb))
+    list(set(pos))
+    
+    if not pos: return {'baseform': False}
     baseform = conjugate(verb, "VB")
     thirdpers = conjugate(verb, "3sg")
     simplepast = conjugate(verb, "p")
-    pastpart = conjugate(verb, "VBN")
+    pastpart = conjugate(verb, "VBN") 
     ingform = conjugate(verb, "VBG")
-    isVerb = is_verb(baseform)
+    
+
+
     return {'thirdpers': thirdpers, 
       'simplepast': simplepast, 
       'pastpart': pastpart, 
       'ingform': ingform, 
       'baseform': baseform,
       'subject': subject,
-      'isVerb': isVerb
+      'pos': list(set(pos))
     }
 
-def is_verb(verb):
-  synset = wn.synsets(verb, wn.VERB)
-  return ( not not[wd for wd in synset if wd.name().split('.')[0] in verb ])
-  
 
+def get_pos(word):
+    if not word: 
+      return []
+    synset = wn.synsets(word)
+    #print(synset)
+    poss = []
+    for s in synset:
+        synset_pos = s.name().split('.')[1]
+        synset_name = s.name().split('.')[0]
+        if synset_name == word:
+            poss.append(synset_pos)
+        if len(s.lemmas()) > 1:
+            for l in s.lemmas():
+                if l.name() == word:
+                    poss.append(synset_pos)
+    return poss
