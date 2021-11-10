@@ -35,8 +35,9 @@
  </div>
 </form>
 
-
+<div *ngIf="isInDictionary; else notInDictionary">
 <div *ngIf="isVerb; else notaVerb">
+
 
 
 <div *ngIf="isBe; else elseBlock">
@@ -94,7 +95,11 @@
 </ng-template>
 
 </div>
-
+</div>
 <ng-template  #notaVerb>
    <h2><span class="not-a-verb">"{{ boxString }}"</span> is not a verb. Try again.</h2>
+</ng-template>
+
+<ng-template  #notInDictionary>
+   <h2><span class="not-a-verb">"{{ boxString }}"</span> is not in my dictionary. Try again.</h2>
 </ng-template>

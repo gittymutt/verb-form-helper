@@ -25,6 +25,9 @@ export class AppComponent implements OnInit {
   be = new Be();
   isBe: boolean = false
   isVerb: boolean = true;
+  isInDictionary: boolean = true;
+  pos;
+
   // interface
   form: FormGroup;
 
@@ -43,7 +46,10 @@ export class AppComponent implements OnInit {
         console.log("incoming datatype is: ", typeof(data));
         this.verb = data;
         this.subject = data['subject'];
-        this.isVerb = data['isVerb'];
+        this.pos = data['pos'];
+        this.isVerb = true;
+        
+         
         
         
       });
@@ -53,16 +59,23 @@ export class AppComponent implements OnInit {
     //console.log("verbTxt: " + verbTxt.value)
     this.http.get(this.url1+subjectTxt+this.url2+verbTxt.value)
         .toPromise().then( data => {
-          this.verb = data;
-          this.subject = data['subject'];
-          this.isBe = data['baseform'] === 'be'
-          this.setNumber();
-          this.be.set(this.isSingular, this.isI);
-          this.isVerb = data['isVerb'];
-          console.log("Is a verb: " + this.isVerb);
-          this.boxString = verbTxt.value;
+              if (data['baseform'] !== false) {
+              this.isInDictionary = true;
+              this.verb = data
+              this.subject = data['subject'];
+              this.isBe = data['baseform'] === 'be'
+              this.setNumber();
+              this.be.set(this.isSingular, this.isI);
+              this.pos = data['pos'];
+              this.isVerb = this.pos.indexOf('v') >= 0;
+              this.boxString = verbTxt.value;
+            } else {
+              this.isInDictionary = false;
+              this.boxString = verbTxt.value;
+            }
+        
         });
-  }
+  } 
   
   radioChange(event) {
     if (event.target.value === "singular") {
