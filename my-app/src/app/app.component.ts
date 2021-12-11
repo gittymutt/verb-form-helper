@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
   subject: string;
   verb;     // what data type should this be?
   verbForm: string;
-  url1:string = 'http://localhost:5000/?subject=';
-  // url1:string = 'https://petersenglish.nyc/app/?subject=';
+  // url1:string = 'http://localhost:5000/?subject=';
+  url1:string = 'https://petersenglish.nyc/app/?subject=';
   url2:string = '&verb=';
   boxString: string = "";
 
