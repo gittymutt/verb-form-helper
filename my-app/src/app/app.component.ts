@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
 
   change(subjectTxt: string, verbTxt: { value: string; }, ) {
     //console.log("verbTxt: " + verbTxt.value)
-    this.http.get(this.url1+subjectTxt+this.url2+verbTxt.value)
+    this.http.get(this.url1+subjectTxt+this.url2+verbTxt.value.toLowerCase())
         .toPromise().then( data => {
               if (data['baseform'] !== false) {
               this.isInDictionary = true;

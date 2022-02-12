@@ -1,38 +1,52 @@
+<h1>Verb Form Helper</h1>
+<p>Enter a subject and a verb to find out the correct verb forms.</p>
 <form [formGroup]="form">
-<input 
-   type="text" 
-   placeholder="put subject here" 
-   value="the dog" 
-   #subjectTxt
-   formControlName="subject"
+<div class="subject-box">
+   <label for="subject">Enter subject:</label>
+   <input 
+      type="text" 
+      placeholder="put subject here" 
+      value="the dog" 
+      #subjectTxt
+      formControlName="subject"
+      id="subject"
    >
-<input 
-   type="text" 
-   placeholder="put verb here" 
-   value="go" 
-   #verbTxt
-   formControlName="verb">
-<button (click)="change(subjectTxt.value, verbTxt)">Change</button>
+</div>
+<div class="verb-box">
+   <label for="verb">Enter verb:</label>
+   <input 
+      type="text" 
+      placeholder="put verb here" 
+      value="go" 
+      #verbTxt
+      formControlName="verb"
+      id="verb"
+   >
+</div>
 
-<div>
-    <input  
-      type="radio" 
-      name="number"  
-      value="singular" 
-      (change)="radioChange($event)" 
-      formControlName="number">
-    <label class="custom-control-label" for="singular">Third person singular</label>
+
+<div class="radio-box">
+   <div>
+      <input  
+         type="radio" 
+         name="number"  
+         value="singular" 
+         (change)="radioChange($event)" 
+         formControlName="number">
+      <label class="custom-control-label" for="singular">Third person singular</label>
+   </div>
+   <div>
+      <input  
+         type="radio"   
+         name="number" 
+         value="plural" 
+      
+         (change)="radioChange($event)"
+         formControlName="number">
+      <label class="custom-control-label" for="plural">Other</label>
+   </div>
  </div>
- <div>
-    <input  
-      type="radio"   
-      name="number" 
-      value="plural" 
-     
-      (change)="radioChange($event)"
-      formControlName="number">
-   <label class="custom-control-label" for="plural">Other</label>
- </div>
+ <button (click)="change(subjectTxt.value, verbTxt)">Get Verbs</button>
 </form>
 
 <div *ngIf="isInDictionary; else notInDictionary">
@@ -64,8 +78,8 @@
    <br>
 
    <h2>Present Progressive/Continuous</h2>
-   {{ subject | capitalizeFirst }} {{ be.affC }} {{ verb.ingform}} <br>
-   {{ subject | capitalizeFirst }} {{ be.negC1 }} {{ verb.ingform}} <br>
+   {{ subject | capitalizeFirst }}{{ be.affC }} {{ verb.ingform}} <br>
+   {{ subject | capitalizeFirst }}{{ be.negC1 }} {{ verb.ingform}} <br>
    {{ be.affNc | capitalizeFirst }} {{ subject }} {{ verb.ingform}} ?<br>
   
 
@@ -101,5 +115,5 @@
 </ng-template>
 
 <ng-template  #notInDictionary>
-   <h2><span class="not-a-verb">"{{ boxString }}"</span> is not in my dictionary. Try again.</h2>
+   <h2><span class="not-a-verb">"{{ boxString }}"</span> is not in my verb dictionary. Try again.</h2>
 </ng-template>

@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body {
+    margin: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    /* border: black 1px; */
+    max-width: 500px;
+    
+}
+
+form .subject-box {
+    margin-bottom: 15px;
+}
+form .subject-box input {
+    margin-left: 5px;
+}
+form .verb-box input {
+    margin-left: 21px;
+}
+
+form .verb-box {
+    margin-bottom: 15px;
+}
+
+form .radio-box {
+    margin-bottom: 15px;
+}
+
+form button {
+    max-width: 100px;
+}
