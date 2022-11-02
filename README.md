@@ -1,4 +1,4 @@
-Verb Form Helper
+<h1>Verb Form Helper</h1>
 
 A reference for English language learners.
 
